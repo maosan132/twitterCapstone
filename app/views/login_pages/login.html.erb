@@ -1,0 +1,50 @@
+<header class="navbar">
+  <div class="container-fluid navbar-inner">
+    <nav class="twitter">
+    <a href="#">link to booktastes</a>
+      <%# link_to opinions_path, class: "logo" do %>
+        <i class="fa fa-twitter home-logo"></i>
+      <%# end %>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <i class="fa fa-cog"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li><%# link_to "Profile", user_path(current_user.id) %></li>
+            <li><%# link_to "Settings", edit_user_path(current_user.id) %></li>
+            <li class="divider"></li>
+            <li><%# link_to 'Log out', logout_path, method: :delete %></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<div class="home-wrap">
+  <div class="left">
+    <div class="left-inner">
+      <div>
+        <i class="fa fa-search"></i>
+        Follow your interests.
+      </div>
+      <div>
+        <i class="fa fa-users"></i>
+        Hear what people are talking about.
+      </div>
+      <div>
+        <i class="fa fa-comment"></i>
+        Join the conversation.
+      </div>
+    </div>  
+  </div>
+  <div class="right">
+    <%# render 'sessions/new' %>
+    <div class="right-center">
+      <i class="fa fa-twitter"></i>
+      <div>See what's happening in the book's world right now</div>
+      <p>Join Booktastes today</p>
+      <%# link_to 'Sign up', signup_path %>
+    </div>
+  </div>
+</div>
