@@ -16,16 +16,20 @@ ActiveRecord::Schema.define(version: 2020_10_16_170257) do
   enable_extension "plpgsql"
 
   create_table "followings", force: :cascade do |t|
-    t.integer "followedid"
-    t.integer "followerid"
+    t.bigint "follower_id"
+    t.bigint "followed_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["followed_id"], name: "index_followings_on_followed_id"
+    t.index ["follower_id"], name: "index_followings_on_follower_id"
   end
 
   create_table "tastes", force: :cascade do |t|
+    t.bigint "user_id"
     t.text "text"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_tastes_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -37,4 +41,7 @@ ActiveRecord::Schema.define(version: 2020_10_16_170257) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "followings", "users", column: "followed_id"
+  add_foreign_key "followings", "users", column: "follower_id"
+  add_foreign_key "tastes", "users"
 end
