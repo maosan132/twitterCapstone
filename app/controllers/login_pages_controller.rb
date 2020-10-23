@@ -7,7 +7,7 @@ class LoginPagesController < ApplicationController
 
   private
   def logout
-    redirect_to opinions_path if logged_in?
+    #redirect_to tastes_path if logged_in?
   end
 
 
