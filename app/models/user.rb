@@ -9,5 +9,5 @@ class User < ApplicationRecord
     has_many :current_followeds, through: :followeds    
   
     # Will return an array of opinions the given user instance has made
-    has_many :tastes
+    has_many :tastes, dependent: :destroy
 end

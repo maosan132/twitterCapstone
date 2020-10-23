@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2020_10_16_170257) do
 
   create_table "tastes", force: :cascade do |t|
     t.bigint "user_id"
+    t.string "title"
     t.text "text"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
