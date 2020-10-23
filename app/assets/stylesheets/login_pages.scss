@@ -139,18 +139,21 @@ body {
       div {
         font-size: 27px;
         margin-bottom: 60px;
+        font-weight: bold;
       }
       p {
         margin-bottom: 25px;
         font-weight: 600;
       }
-      a {
+      a.signup_btn {
+        background-color: rgb(29,161,242);
         text-decoration: none;
         border: 1px solid rgba(29,161,242,1.00);
         border-radius: 25px;
         padding: 10px 100px;
-        color: rgba(29,161,242,1.00);
+        color: white;
         font-size: 18px;
+        width: 350px;
       }
       a:hover {
         color: white;

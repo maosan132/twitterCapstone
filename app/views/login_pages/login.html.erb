@@ -17,12 +17,19 @@
     </div>  
   </div>
   <div class="right">
-    <%# render 'sessions/new' %>
+    <% render 'sessions/new' %>
+    <form action="/login" accept-charset="UTF-8" method="post" class="login-form-wrap">
+      <input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token">
+      <label class="form-label" for="session_username">Username</label> <br>
+      <input class="form-input" type="text" name="session[username]" id="session_username">
+
+      <input type="submit" name="commit" value="Log in" class="form-btn" data-disable-with="Log in">
+    </form> 
     <div class="right-center">
       <i class="fa fa-twitter"></i>
       <div>See what's happening in the book's world right now</div>
       <p>Join Booktastes today</p>
-      <a href="#">Sign up</a>
+      <a href="#" class="signup_btn">Sign up</a>
       <br>
       <a href="#">Login</a>
       <%# link_to 'Sign up', signup_path %>
