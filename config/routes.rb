@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  get 'tastes/index'
-  get 'tastes/new'
-  get 'tastes/create'
-  get 'tastes/findout'
   root 'login_pages#login'
   resources :tastes, only: %i[new create index]
 
@@ -10,4 +6,7 @@ Rails.application.routes.draw do
   post '/signup', to: 'users#create'
 
   post '/login', to: 'sessions#create'
+
+  resources :tastes, only: %i[new create index]
+
 end
