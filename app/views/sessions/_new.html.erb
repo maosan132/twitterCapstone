@@ -1,7 +1,8 @@
-<form action="/login" accept-charset="UTF-8" method="post" class="login-form-wrap">
-    <input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token">
-    <label class="form-label" for="session_username">Username</label> <br>
-    <input class="form-input" type="text" name="session[username]" id="session_username">
+<div class="login-form-wrap">
+  <%= form_for :session, url: login_path do |f| %>
+    <%= f.label :username, class: 'form-label' %> <br>
+    <%= f.text_field :username, class: 'form-input' %>
 
-    <input type="submit" name="commit" value="Log in" class="form-btn" data-disable-with="Log in">
-</form>
+    <%= f.submit 'Log in', class: 'form-btn' %>
+  <% end %>
+</div>

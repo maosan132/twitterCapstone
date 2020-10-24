@@ -81,9 +81,10 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    //background-color: rgb(113, 201, 248);
-    background-image: image-url(logo_background.png);
-    background image
+    background-color: rgb(113, 201, 248);
+    background-image: image-url('logo_background.png') no-repeat right top;
+    //<%= asset_path 'logo_background.png' %>;
+    background-size: cover;
     color: white;
     .left-inner {
       div {
@@ -113,7 +114,8 @@ body {
       .form-input {
         border: 1px solid rgb(216, 216, 216);
         height: 35px;
-        font-size: 18px;
+        font-size: 16px;
+        font-weight: 100;
         padding: 3px 7px;
       }
       .form-btn {
