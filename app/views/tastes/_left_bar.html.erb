@@ -3,28 +3,31 @@
   <div class="user-img">
       <img alt="maosan" class="avatar" >
   </div>
-  <div class="user-fullname">maosan</div>
+  <div class="user-fullname"><%= current_user.full_name %></div>
   <div class="user-stats">
     <div>
-      <p class="stat-num">0</p>
+     <p class="stat-num"><%= current_user.followings.count %></p>
       <p>Following</p>
     </div>
     <div>
-      <p class="stat-num">0</p>
-      <p>Followers</p>
+      <p class="stat-num"><%= current_user.followers.count %></p>
+      <p><%= 'Follower'.pluralize(current_user.followers.count) %></p>
     </div>
   </div>
-  <a class="left-bar-active" href="/opinions">
+  <%= link_to tastes_path do %>
     <i class="fa fa-home"></i>
     <div class="profile-link">Home</div>
-</a>  <a class="" href="#">
+  <% end %>
+  <%= link_to user_path(current_user.id) do %>
     <i class="fa fa-user"></i>
     <div class="profile-link">Profile</div>
-</a>  <a class="" href="#">
+  <% end %>
+  <%= link_to discover_path do %>
     <i class="fa fa-hashtag"></i>
     <div class="profile-link">Discover</div>
-</a>  <a class="" href="#">
+  <% end %>
+  <%= link_to edit_user_path(current_user.id) do %>
     <i class="fa fa-cog"></i>
     <div class="profile-link">Settings</div>
-</a>
+  <% end %>
 </aside>
