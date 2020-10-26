@@ -1,83 +1,71 @@
-
-
 <div class="homepage">
   <aside class="left-bar">
-  <div class="user-img">
-      <img alt="maosan123" class="avatar" src="#">
-  </div>
-  <div class="user-fullname">maosan123</div>
-  <div class="user-stats">
-    <div>
-      <p class="stat-num">0</p>
-      <p>Following</p>
+    <div class="user-img">
+      <img alt="image of avatar" class="avatar" src="#">
     </div>
-    <div>
-      <p class="stat-num">0</p>
-      <p>Followers</p>
+    <div class="user-fullname"><%= current_user.fullname %></div>
+    <div class="user-stats">
+      <div>
+        <p class="stat-num"><%= current_user.followeds.count %></p>
+        <p>Following</p>
+      </div>
+      <div>
+        <p class="stat-num"><%= current_user.followers.count %></p>
+        <p><%= 'Follower'.pluralize(current_user.followers.count) %></p>
+      </div>
     </div>
-  </div>
-  <a class="left-bar-active" href="/tastes">
-    <i class="fa fa-home"></i>
-    <div class="profile-link">Home</div>
-</a>  <a class="" href="#">
-    <i class="fa fa-user"></i>
-    <div class="profile-link">Profile</div>
-</a>  <a class="" href="/discover">
-    <i class="fa fa-hashtag"></i>
-    <div class="profile-link">Discover</div>
-</a>  <a class="" href="#">
-    <i class="fa fa-cog"></i>
-    <div class="profile-link">Settings</div>
-</a></aside>
+    <a class="left-bar-active" href="/tastes">
+      <i class="fa fa-home"></i>
+      <div class="menu-item">Home</div>
+    </a>
+
+    <a class="" href="/discover">
+      <i class="fa fa-hashtag"></i>
+      <div class="menu-item">Discover</div>
+    </a>
+
+    <a class="" href="#">
+      <i class="fa fa-user"></i>
+      <div class="menu-item">Profile</div>
+    </a>
+
+  </aside>
   <div class="center-menu">
-    <header class="navbar">
-  <div class="container-fluid navbar-inner">
-    <nav class="twitter">
-      <a class="logo" href="#">
-        <i class="home-logo fa fa-twitter"></i>
-</a>      <ul class="nav navbar-nav navbar-right">
-        <li class="">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-            <i class="fa fa-cog"></i>
-          </a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Settings</a></li>
-            <li class="divider"></li>
-            <li><a href="/logout">Log out</a></li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
-  </div>
-</header>
+  <%= render 'shared/header' %>
+
+
+
+
     <div class="center-wrap">
       <div class="tweet-center">
         <div class="title-section">
           <div class="tweets-text">Tastes</div>
         </div>
-         <div class="tweet-form-wrap">
-  <form action="/tastes" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="M31K8GiIxo71JhliU8LW0aG7JWlh1lcURFDGLDBsudAXAP70P0VGhWWxmorfvPnGRnLVAO46767UKT0BYmHInQ==">
-    <input class="form-input" placeholder="What's happening?" type="text" >
+        <div class="tweet-form-wrap">
+          <form action="/tastes" method="post"><input name="utf8" type="hidden" value="✓">
+            <input type="hidden" name="authenticity_token">
+            <input class="form-input" placeholder="What's reading?" type="text">
 
-    <input type="submit" name="commit" value="" class="form-btn">
-</form></div>
+            <input type="submit" name="commit" value="" class="form-btn">
+          </form>
+        </div>
         <ul class="tweet-list">
         </ul>
       </div>
       <aside>
-  <p class="who-to-follow">Who to follow</p>
-    <a class="user-follow-link" href="/users/155">
-      <div class="user-follow">
-        <div class="user-follow-img" style="height: 40px; width: 40px, border: 1px solid blue, background-color: blue" >
-            <img alt="" class="avatar">
-        </div>
-        <div class="user-follow-text">
-          <div class="user-follow-fullname">asdfasdf</div>
-          <div class="user-follow-username">fasdfasdf</div>
-        </div>
-      </div>
-</a>   </aside>
+        <p class="who-to-follow">Who to follow</p>
+        <a class="user-follow-link" href="/users/155">
+          <div class="user-follow">
+            <div class="user-follow-img" style="height: 40px; width: 40px, border: 1px solid blue, background-color: blue">
+              <img alt="" class="avatar">
+            </div>
+            <div class="user-follow-text">
+              <div class="user-follow-fullname">asdfasdf</div>
+              <div class="user-follow-username">fasdfasdf</div>
+            </div>
+          </div>
+        </a>
+      </aside>
     </div>
   </div>
 </div>

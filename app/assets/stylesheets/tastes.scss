@@ -39,7 +39,7 @@
   }
   a.left-bar-active {
     text-decoration: none;
-    padding: 20px 35px;
+    padding: 15px 35px;
     display: block;
     background-color: rgb(29,161,242);
     i {
@@ -47,7 +47,7 @@
       color: white;
       margin-right: 10px;
     }
-    .profile-link {
+    .menu-item {
       display: inline-block;
       font-size: 16px;
       text-transform: uppercase;
@@ -65,7 +65,7 @@
       color: rgb(143, 143, 143);
       margin-right: 10px;
     }
-    .profile-link {
+    .menu-item {
       display: inline-block;
       font-size: 16px;
       text-transform: uppercase;
@@ -76,7 +76,7 @@
   a:hover {
     background-color: rgb(29,161,242);
     i,
-    .profile-link {
+    .menu-item {
       color: white;
     }
   }
