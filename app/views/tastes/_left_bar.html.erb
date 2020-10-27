@@ -1,6 +1,6 @@
 
 <aside class="left-bar">
-  <div class="user-img">
+  <div class="user-image">
       <img alt="maosan" class="avatar" >
   </div>
   <div class="user-fullname"><%= current_user.fullname %></div>
@@ -14,20 +14,18 @@
       <p><%= 'Follower'.pluralize(current_user.followers.count) %></p>
     </div>
   </div>
-  <%= link_to tastes_path do %>
+  <%= link_to tastes_path, class: "left-bar-active" do %>
     <i class="fa fa-home"></i>
     <div class="menu-item">Home</div>
+  <% end %>
+    <%= link_to discover_path do %>
+    <i class="fa fa-hashtag"></i>
+    <div class="menu-item">Discover</div>
   <% end %>
   <%= link_to user_path(current_user.id) do %>
     <i class="fa fa-user"></i>
     <div class="menu-item">Profile</div>
   <% end %>
-  <%= link_to discover_path do %>
-    <i class="fa fa-hashtag"></i>
-    <div class="menu-item">Discover</div>
-  <% end %>
-  <%= link_to edit_user_path(current_user.id) do %>
-    <i class="fa fa-cog"></i>
-    <div class="menu-item">Settings</div>
-  <% end %>
+
+
 </aside>

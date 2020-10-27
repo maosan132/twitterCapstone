@@ -5,14 +5,14 @@
 
 .left-bar {
   width: 300px;
-  background-color: rgb(15, 41, 58);
+  background-color: rgb(30, 50, 69);
   color: white;
-  .user-img {
+  .user-image {
     width: 120px;
     height: 120px;
     margin: 72px auto 30px;
   }
-  .user-img > img{
+  .user-image > img{
     width: 120px;
     height: 120px;
     border-radius: 50%;
@@ -41,7 +41,7 @@
     text-decoration: none;
     padding: 15px 35px;
     display: block;
-    background-color: rgb(29,161,242);
+    background-color: rgb(77,152,208);
     i {
       font-size: 22px;
       color: white;
@@ -74,7 +74,7 @@
     }
   }
   a:hover {
-    background-color: rgb(29,161,242);
+    background-color: rgb(77,152,208);
     i,
     .menu-item {
       color: white;
@@ -118,11 +118,14 @@
           height: 100%;
         }
         .tastes-text {
-          border-bottom: 4px solid rgb(29,161,242);
+          border-bottom: 4px solid rgb(77,152,208);
           color: rgb(98, 98, 98);
         }
       }
     }
+
+/////// side bars styles //////
+
     aside {
       width: 25%;
       border-left: 1px solid rgb(216, 216, 216);
@@ -171,22 +174,24 @@
         }
       }
     }
+
+
     aside.profile-aside {
       width: 25%;
-      border-left: 1px solid rgb(216, 216, 216);
+      border-left: 100px solid rgb(216, 216, 216);
       .follow-user {
         display: inline-block;
-        border: 1px solid rgb(29,161,242);
+        border: 1px solid rgb(77,152,208);
         padding: 5px 15px;
         margin: 25px 0 0;
         border-radius: 20px;
         font-size: 16px;
-        color: rgb(29,161,242);
+        color: rgb(74, 97, 21);
         text-decoration: none;
         transition: all 0.5s ease-in-out;
       }
       .follow-user:hover {
-        background-color: rgb(29,161,242);
+        background-color: rgb(77,152,208);
         color: white;
       }
       .profile-img-link {
@@ -196,7 +201,7 @@
         justify-content: center;
         margin: 70px 0 15px;
       }
-      .user-img {
+      .user-image {
         width: 100px;
         height: 100px;
         img {
@@ -305,8 +310,8 @@
   .form-btn {
     float: right;
     background-color: white;
-    border: 1px solid rgb(29,161,242);
-    color: rgb(29,161,242);
+    border: 1px solid rgb(77,152,208);
+    color: rgb(77,152,208);
     font-size: 15px;
     border-radius: 10px;
     border-top-right-radius: 0;
@@ -316,7 +321,7 @@
   }
   .form-btn:hover {
     color: white;
-    background-color: rgb(29,161,242);
+    background-color: rgb(77,152,208);
   }
 }
 
@@ -355,7 +360,7 @@
     }
     a:hover {
       text-decoration: none;
-      color: rgb(29,161,242);
+      color: rgb(77,152,208);
     }
   }
   .taste-username {
@@ -383,7 +388,7 @@
   }
   .findout-user-link:hover {
     .name {
-      color: rgb(29,161,242);
+      color: rgb(77,152,208);
     }
   }
   .findout-taste-top {

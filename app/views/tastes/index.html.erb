@@ -1,71 +1,50 @@
-<div class="homepage">
-  <aside class="left-bar">
-    <div class="user-img">
-      <img alt="image of avatar" class="avatar" src="#">
-    </div>
-    <div class="user-fullname"><%= current_user.fullname %></div>
-    <div class="user-stats">
-      <div>
-        <p class="stat-num"><%= current_user.followeds.count %></p>
-        <p>Following</p>
+<div class="main">
+  <%= render 'left_bar' %>
+  <div class="center-wrap">
+    <%= render 'shared/header' %>
+    <div class="tweet-center">
+      <div class="title-section">
+        <div class="tweets-text">Tastes</div>
       </div>
-      <div>
-        <p class="stat-num"><%= current_user.followers.count %></p>
-        <p><%= 'Follower'.pluralize(current_user.followers.count) %></p>
+      <div class="tweet-form-wrap">
+        <%= form_for @taste, url: tastes_path do |f| %>
+        <%= f.text_field :text, class: 'form-input', placeholder: "What's it reading?" %>
+
+        <%= f.submit 'Taste it', class: 'form-btn' %>
+        <% end %>
       </div>
-    </div>
-    <a class="left-bar-active" href="/tastes">
-      <i class="fa fa-home"></i>
-      <div class="menu-item">Home</div>
-    </a>
 
-    <a class="" href="/discover">
-      <i class="fa fa-hashtag"></i>
-      <div class="menu-item">Discover</div>
-    </a>
+      <ul class="tweet-list">
 
-    <a class="" href="#">
-      <i class="fa fa-user"></i>
-      <div class="menu-item">Profile</div>
-    </a>
-
-  </aside>
-  <div class="center-menu">
-  <%= render 'shared/header' %>
-
-
-
-
-    <div class="center-wrap">
-      <div class="tweet-center">
-        <div class="title-section">
-          <div class="tweets-text">Tastes</div>
-        </div>
-        <div class="tweet-form-wrap">
-          <form action="/tastes" method="post"><input name="utf8" type="hidden" value="✓">
-            <input type="hidden" name="authenticity_token">
-            <input class="form-input" placeholder="What's reading?" type="text">
-
-            <input type="submit" name="commit" value="" class="form-btn">
-          </form>
-        </div>
-        <ul class="tweet-list">
-        </ul>
-      </div>
-      <aside>
-        <p class="who-to-follow">Who to follow</p>
-        <a class="user-follow-link" href="/users/155">
-          <div class="user-follow">
-            <div class="user-follow-img" style="height: 40px; width: 40px, border: 1px solid blue, background-color: blue">
-              <img alt="" class="avatar">
-            </div>
-            <div class="user-follow-text">
-              <div class="user-follow-fullname">asdfasdf</div>
-              <div class="user-follow-username">fasdfasdf</div>
-            </div>
+        <%  @tastes.each do |t| %>
+        <li>
+          <div>
+            <p></p>
+            <%= t.user.fullname %>
           </div>
-        </a>
-      </aside>
+          <div>
+            <%= t.text %>
+          </div>
+        </li>
+
+
+        <% end %>
+      </ul>
     </div>
+    <aside class="profile">
+      <p class="who-to-follow">Who to follow</p>
+      <a class="user-follow-link" href="#">
+        <div class="user-follow">
+          <div class="user-follow-img" style="height: 40px; width: 40px, border: 1px solid blue, background-color: blue">
+            <img alt="avatar image" class="avatar">
+          </div>
+          <div class="user-follow-text">
+            <div class="user-follow-fullname">Full Name</div>
+            <div class="user-follow-username">username</div>
+          </div>
+        </div>
+      </a>
+    </aside>
   </div>
+
 </div>
