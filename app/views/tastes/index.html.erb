@@ -2,11 +2,11 @@
   <%= render 'left_bar' %>
   <div class="center-wrap">
     <%= render 'shared/header' %>
-    <div class="tweet-center">
+    <div class="taste-center">
       <div class="title-section">
-        <div class="tweets-text">Tastes</div>
+        <div class="tastes-text">Tastes</div>
       </div>
-      <div class="tweet-form-wrap">
+      <div class="taste-form-wrap">
         <%= form_for @taste, url: tastes_path do |f| %>
         <%= f.text_field :text, class: 'form-input', placeholder: "What's it reading?" %>
 
@@ -14,20 +14,34 @@
         <% end %>
       </div>
 
-      <ul class="tweet-list">
+      <ul class="taste-list">
 
         <%  @tastes.each do |t| %>
-        <li>
-          <div>
-            <p></p>
-            <%= t.user.fullname %>
+        <li class="single-taste">
+
+
+          <div class="taste-img-wrap">
+            <div class="taste-img" style="border: 1px solid black; height: 50px; height: 70px">
+              <%= p 'AVATAR ' %>
+              
+            </div>
           </div>
-          <div>
-            <%= t.text %>
+
+
+          <div class="taste-name-text">
+            <div class="taste-fullname">
+              <%= link_to t.user.fullname, user_path(t.user.id) %>
+            </div>
+            <div class="taste-username">
+              <%= t.user.username %>
+            </div>
+            <div class="taste-created-at">
+              | <%= time_ago_in_words(t.created_at) %> ago
+            </div>
+            <p><%= t.text %></p>
           </div>
+
         </li>
-
-
         <% end %>
       </ul>
     </div>

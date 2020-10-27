@@ -22,14 +22,14 @@ body {
 }
 
 .navbar {
-  background-color: rgba(77,152,208,1.00);
+  background-color: rgb(77,152,208);
   color: white;
   border-radius: 0;
   height: 90px;
   margin: 0;
   .navbar-inner {
     height: 100%;
-    .twitter {
+    .taster {
       height: 100%;
       display: flex;
       justify-content: space-between;
@@ -121,8 +121,8 @@ body {
       }
       .form-btn {
         background-color: white;
-        border: 1px solid rgba(77,152,208);
-        color: rgba(77,152,208,1.00);
+        border: 1px solid rgb(77,152,208);
+        color: rgb(77,152,208);
         font-size: 16px;
         border-radius: 25px;
         padding: 7px 15px;
@@ -140,7 +140,7 @@ body {
     .right-center {
       width: 350px;
       i {
-        color: rgba(77,152,208,1.00);
+        color: rgb(77,152,208);
         font-size: 50px;
         margin: 0 0 15px 10px;
       }
@@ -156,7 +156,7 @@ body {
       a {
         background-color: rgb(77,152,208);
         text-decoration: none;
-        border: 1px solid rgba(77,152,208);
+        border: 1px solid rgb(77,152,208);
         border-radius: 25px;
         padding: 10px 100px;
         color: white;

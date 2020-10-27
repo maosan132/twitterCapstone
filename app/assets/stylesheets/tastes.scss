@@ -329,7 +329,7 @@
   padding: 35px 50px;
 }
 
-.individual-taste {
+.single-taste {
   list-style: none;
   padding: 20px 25px;
   border-top: 1px solid rgb(216, 216, 216);
@@ -369,29 +369,29 @@
 }
 
 //////find out styles /////////
-.findout-taste-list {
+.discover-taste-list {
   padding: 30px ;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 } 
 
-.findout-taste {
+.discover-taste {
   width: 45%;
   border: 1px solid rgb(231, 231, 231);
   border-radius: 8px;
   margin: 10px 0;
   padding: 15px;
-  .findout-user-link {
+  .discover-user-link {
     text-decoration: none;
     color: rgb(41, 41, 41);
   }
-  .findout-user-link:hover {
+  .discover-user-link:hover {
     .name {
       color: rgb(77,152,208);
     }
   }
-  .findout-taste-top {
+  .discover-taste-top {
     display: flex;
     margin-bottom: 15px;
     border-bottom: 1px solid rgb(231, 231, 231);
