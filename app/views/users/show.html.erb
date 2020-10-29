@@ -1,0 +1,86 @@
+<h1>User profile page</h1>
+<div class="main">
+  <%= render 'tastes/left_bar' %>
+  <div class="center-block">
+    <%# render 'shared/header' %>
+    <div class="center-wrap">
+      <div class="taste-center">
+        <div class="cover-image"> cover image
+        </div>
+        <div class="title-section">
+          <div class="tastes-text">Tastes</div>
+        </div>
+        <%# render 'tastes/new_taste' %>
+        <ul class="taste-list">
+
+          <%  @tastes.each do |t| %>
+          <li class="single-taste">
+
+            <div class="taste-img-wrap">
+              <div class="taste-img" style="border: 1px solid black; height: 50px; height: 70px">
+                <%= p 'AVATAR ' %>
+              </div>
+            </div>
+
+            <div class="taste-name-text">
+              <div class="taste-fullname">
+                <%= link_to t.user.fullname, user_path(t.user.id) %>
+              </div>
+              <div class="taste-username">
+                <%= t.user.username %>
+              </div>
+              <div class="taste-created-at">
+                | <%= time_ago_in_words(t.created_at) %> ago
+              </div>
+              <p><%= t.text %></p>
+            </div>
+
+          </li>
+          <% end %>
+        </ul>
+      </div>
+
+      <aside class="user-followings">
+        <div class="profile-img-link">
+          <div class="user-image">
+            <%= image_tag  "" %><br>
+
+          </div>
+
+          <br><br>
+        </div>
+        <div class="user-fullname"><%= @user.fullname %></div>
+        <div class="user-username">@<%= @user.username %></div>
+        <div class="follow"><%= link_to "follow/unfollow ", class: 'follow-user' %></div>
+        <div class="user-profile-stats">
+          <div>
+            <p class="stat-num"><%= @user.tastes.count %></p>
+            <p class="stat-text"><%= 'Tweet'.pluralize(@user.tastes.count) %></p>
+          </div>
+          <div class="stat-center">
+            <p class="stat-num"><%= @user.followers.count %></p>
+            <p class="stat-text">Following</p>
+          </div>
+          <div>
+            <p class="stat-num"><%= @user.followers.count %></p>
+            <p class="stat-text"><%= 'Follower'.pluralize(@user.followers.count) %></p class="stat-text">
+          </div>
+        </div>
+        <div class="followed-by">
+          <h2>Followed by</h2>
+          here goes a list of users that follow this user (my followers)
+          <div class="followed-by-wrap">
+            <div>
+              <div class="followed-by-img">
+
+              </div>
+
+            </div>
+
+          </div>
+      </aside>
+    </div>
+
+  </div>
+
+</div>

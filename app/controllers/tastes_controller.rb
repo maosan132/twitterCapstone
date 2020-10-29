@@ -11,7 +11,6 @@ def new
   @taste = Taste.new
 end
 
-
   def create
     @taste = current_user.tastes.new(params_taste)
     if @taste.save
@@ -21,11 +20,10 @@ end
       render 'new'
     end
   end
- 
 
   def discover
   end
-  
+
   private
 
   def params_taste
