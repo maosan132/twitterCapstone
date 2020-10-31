@@ -1,4 +1,4 @@
-<aside class="profile">
+<!--<aside class="profile">
   <p class="who-to-follow">Who to follow</p>
   <a class="user-follow-link" href="#">
     <div class="user-follow">
@@ -11,4 +11,21 @@
       </div>
     </div>
   </a>
+</aside>-->
+
+<aside>
+  <p class="who-to-follow">Who to follow</p>
+  <% not_following_users.each do |user| %>
+    <%= link_to user_path(user.id), class: 'user-follow-link' do %>
+      <div class="user-follow">
+        <div class="user-follow-img">
+          <img alt="">
+        </div>
+        <div class="user-follow-text">
+          <div class="user-follow-fullname"><%= user.fullname %></div>
+          <div class="user-follow-username">@<%= user.username %></div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
 </aside>
