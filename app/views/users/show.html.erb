@@ -76,15 +76,20 @@
         <div class="followed-by">
           <h2>Followed by</h2>
           here goes a list of users that follow this user (my followers)
-          <div class="followed-by-wrap">
-            <div>
-              <div class="followed-by-img">
 
-              </div>
-
-            </div>
-
-          </div>
+  <%= @who.each do |user| %>
+    <%= link_to user_path(user.id), class: 'user-follow-link' do %>
+    <div class="user-follow">
+      <div class="user-follow-img">
+        <img alt="avatar image" class="avatar">
+      </div>
+      <div class="user-follow-text">
+        <div class="user-follow-fullname"><%= user.fullname %></div>
+        <div class="user-follow-username"><%= user.username %></div>
+      </div>
+    </div>
+    <% end %>
+  <% end %>
       </aside>
     </div>
 
