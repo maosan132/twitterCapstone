@@ -4,7 +4,8 @@ class TastesController < ApplicationController
   def index
     @taste = current_user.tastes.build if current_user
     @tastes = Taste.all.includes(:user)
-    
+    list = current_user.followers.select(:followed_id)
+    @who = User.all.unfollowed(list).includes([:photo_attachment])
   end
 
 def new

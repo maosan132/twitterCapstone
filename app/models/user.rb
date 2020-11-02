@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-    
+    has_one_attached :photo
+
     # Will return an array of follows for the given user instance
     # has_many :received_follows, foreign_key: :followedid, class_name: 'Following'
     # Will return an array of users who follow the user instance
@@ -11,4 +12,7 @@ class User < ApplicationRecord
   
     # Will return an array of opinions the given user instance has made
     has_many :tastes, dependent: :destroy
+
+    scope :unfollowed, -> (list) { where.not(id: list) }
+    scope :followed, -> (list) {where(id: list) }
 end
