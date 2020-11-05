@@ -26,7 +26,7 @@
               <div class="taste-fullname">
                 <%= link_to t.user.fullname, user_path(t.user.id) %>
               </div>
-              <div class="taste-created-at">
+              <div class="taste-date">
                 <%= time_ago_in_words(t.created_at) %>
               </div>
               <p><%= t.text %></p>

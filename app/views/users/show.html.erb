@@ -58,11 +58,21 @@
         </div>
         <div class="user-fullname"><%= @user.fullname %></div>
         <div class="user-username">@<%= @user.username %></div>
-        <div class="follow"><%= link_to "follow/unfollow ", class: 'follow-user' %></div>
+        <div class="follow">
+        <%# link_to "follow/unfollow ", class: 'follow-user' %>
+          <% unless current_user == @user %>
+
+              <%= link_to 'Follow', following_path(@user.id), method: :post, class: 'follow-user'%>
+
+
+
+          <% end %>
+
+        </div>
         <div class="user-profile-stats">
           <div>
             <p class="stat-num"><%= @user.tastes.count %></p>
-            <p class="stat-text"><%= 'Tweet'.pluralize(@user.tastes.count) %></p>
+            <p class="stat-text"><%= 'Taste'.pluralize(@user.tastes.count) %></p>
           </div>
           <div class="stat-center">
             <p class="stat-num"><%= @user.followeds.count %></p>
@@ -77,22 +87,33 @@
           <h2>Followed by</h2>
           here goes a list of users that follow this user (my followers)
 
-  <%= @who.each do |user| %>
-    <%= link_to user_path(user.id), class: 'user-follow-link' do %>
-    <div class="user-follow">
-      <div class="user-follow-img">
-        <img alt="avatar image" class="avatar">
-      </div>
-      <div class="user-follow-text">
-        <div class="user-follow-fullname"><%= user.fullname %></div>
-        <div class="user-follow-username"><%= user.username %></div>
-      </div>
-    </div>
-    <% end %>
-  <% end %>
+          <%= @who.each do |user| %>
+            <%= link_to user_path(user.id), class: 'user-follow-link' do %>
+            <div class="user-follow">
+              <div class="user-follow-img">
+                <img alt="avatar image" class="avatar">
+              </div>
+              <div class="user-follow-text">
+                <div class="user-follow-fullname"><%= user.fullname %></div>
+                <div class="user-follow-username"><%= user.username %></div>
+              </div>
+              <% unless current_user == user %>
+                <% if following?(user) %>
+                  <%= link_to followings_path(user.id), method: :delete do %>
+                    <div>unfollow</div>
+                  <% end %>
+                <% else %>
+                  <% link_to following_path(user.id), method: :post do %>
+                  <div>follow</div>
+                  <% end %>
+                <% end %>
+              <% end %>
+            </div>
+            <% end %>
+          <% end %>
       </aside>
     </div>
-
+ 
   </div>
 
 </div>

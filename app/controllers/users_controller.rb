@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @tastes = @user.tastes.all.order(created_at: :desc)
     list = current_user.followeds.select(:follower_id)
-    @who = User.all.unfollowed(list).includes([:photo_attachment])
+    @who = User.all.followed(list).includes([:photo_attachment])
   end
 
   private
