@@ -22,6 +22,19 @@ class UsersController < ApplicationController
     @who = User.all.followed(list).includes([:photo_attachment])
   end
 
+  def follow
+    @user = User.find(params[:id])
+    current_user.current_followeds << @user
+    redirect_to user_path(@user)
+  end
+
+  def unfollow
+    @user = User.find(params[:id])
+    @user.followers.find_by(followed_id: current_user.id).destroy
+    redirect_to user_path(@user)
+  end
+
+
   private
 
   def params_user

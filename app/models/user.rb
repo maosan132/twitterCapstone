@@ -9,12 +9,12 @@ class User < ApplicationRecord
 
     has_many :followeds, class_name: 'Following', foreign_key: 'followed_id'
     has_many :current_followeds, through: :followeds, source: 'follower'
-  
+
     # Will return an array of opinions the given user instance has made
     has_many :tastes, dependent: :destroy
 
     scope :unfollowed, -> (list) { where.not(id: list) }
     scope :followed, -> (list) { where(id: list) }
 
-    scope :papasfritas, -> (current) { where.not(id: current.id) }
+    scope :not_current_user, -> (current) { where.not(id: current.id) }
 end

@@ -1,21 +1,14 @@
-<header class='navbar'>
-  <div class='container-fluid navbar-inner'>
-    <nav class='taster'>
-      <%= link_to :root, class: 'main-logo' do %>
-        <i class='fa fa-book logo' </i>
-      <% end %>
-      <ul class='nav navbar-nav navbar-right'>
-        <li class=''>
-          <a href='#' class='dropdown-toggle' data-toggle='dropdown'>
-            <i class='fa fa-cog'></i>
-          </a>
-          <ul class='dropdown-menu'>
-            <li><%= link_to 'Profile', user_path(current_user.id) %></li>
-            <li class='divider'></li>
-            <li><%= link_to 'Log out', logout_path, method: :delete %></li>
-          </ul>
-        </li>
+<header>
+  <nav class="navbar navbar-expand-lg">
+    <%= link_to :root, class: 'main-logo navbar-brand px-4' do %>
+    <i class='fa fa-book logo'> </i>
+    <% end %>
+    <div class='taster'>
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class='nav-item'><i class='fa fa-user logo'> </i><%= link_to ' Profile', user_path(current_user.id) %></li>
+        <li class='ml-2'></li>
+        <li class='nav-item'><i class='fa fa-square logo'> </i><%= link_to ' Log out', logout_path, method: :delete %></li>
       </ul>
-    </nav>
-  </div>
+    </div>
+  </nav>
 </header>

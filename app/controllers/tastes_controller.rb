@@ -5,7 +5,7 @@ class TastesController < ApplicationController
     @taste = current_user.tastes.build if current_user
     @tastes = Taste.all.includes(:user)
     list = current_user.followers.select(:followed_id)
-    @who = User.all.unfollowed(list).includes([:photo_attachment]).papasfritas(current_user)
+    @who = User.all.unfollowed(list).includes([:photo_attachment]).not_current_user(current_user)
   end
 
 def new

@@ -25,48 +25,42 @@ body {
   background-color: rgb(77,152,208);
   color: white;
   border-radius: 0;
-  height: 90px;
+  height: 70px;
   margin: 0;
-  .navbar-inner {
+  padding: 0;
+  display: flex;
+  align-content: stretch;
+  flex-direction: flex-end;
+  .navbar-brand{
+
+  }
+  .taster {
     height: 100%;
-    .taster {
-      height: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    flex-direction: flex-end
   }
 }
 
-.nav > li > a.dropdown-toggle {
-  padding: 30px 15px 17px;
+.nav {
+  width: 100%; float: left
 }
 
-.nav > li > a.dropdown-toggle:hover,
-.nav > li > a.dropdown-toggle:focus {
+.nav > li > a {
   background-color: transparent;
   i {
     color: white;
-  }
-}
-
-.nav .open > a.dropdown-toggle {
-  background-color: transparent;
-  i {
-    color: white;
-  }
-}
-
-.dropdown-toggle {
-  i {
-    font-size: 30px;
-    color: rgb(216, 216, 216);
   }
 }
 
 a.main-logo {
   font-size: 40px;
-  color: red;
+  color: white;
+}
+
+li.nav-item a{
+  color: white;
 }
 
 .wrapper {

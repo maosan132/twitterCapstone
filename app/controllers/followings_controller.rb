@@ -3,17 +3,19 @@ class FollowingsController < ApplicationController
     puts "this is the params #{params[:id]}"
     puts current_user.id
     
-    followed = current_user.followeds.new(followed_id: params[:id], follower_id: current_user.id)
-    flash[:error] = 'Error' unless followed.save!
+    following = current_user.followeds.new(followed_id: params[:id], follower_id: current_user.id)
+    
+    flash[:error] = 'Error' unless following.save
     redirect_to request.referrer
   end
 
 
   def destroy 
-    follow = Following.find(params[:id])
-    follow.destroy
+    following = Following.find(params[:id])
+    following.destroy
     redirect_to request.referrer
   end
 
+  
 
 end

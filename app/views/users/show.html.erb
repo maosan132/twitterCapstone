@@ -2,7 +2,7 @@
 <div class="main">
   <%= render 'tastes/left_bar' %>
   <div class="center-block">
-    <%# render 'shared/header' %>
+    <%= render 'shared/header' %>
     <div class="center-wrap">
       <div class="taste-center">
         <div class="cover-image"> cover image
@@ -60,12 +60,15 @@
         <div class="user-username">@<%= @user.username %></div>
         <div class="follow">
         <%# link_to "follow/unfollow ", class: 'follow-user' %>
-          <% unless current_user == @user %>
-
-              <%= link_to 'Follow', following_path(@user.id), method: :post, class: 'follow-user'%>
-
-
-
+          <% if current_user == @user %>
+            <%# link_to '+', following_path(@user.id), method: :delete, class: 'follow-user'%>
+            <h5><%= "#{@current_user.username}'s page" %></h5>
+          <% elsif @current_user.current_followeds.include?(@user) %>
+            <h5><%= button_to "UnFollow #{@user.username}",     
+                unfollow_user_path, method: "POST" %></h5>
+          <% else %>
+            <h5><%= button_to "Follow #{@user.username}", follow_user_path, 
+                method: "POST"  %></h5>
           <% end %>
 
         </div>
@@ -97,16 +100,9 @@
                 <div class="user-follow-fullname"><%= user.fullname %></div>
                 <div class="user-follow-username"><%= user.username %></div>
               </div>
-              <% unless current_user == user %>
-                <% if following?(user) %>
-                  <%= link_to followings_path(user.id), method: :delete do %>
-                    <div>unfollow</div>
-                  <% end %>
-                <% else %>
-                  <% link_to following_path(user.id), method: :post do %>
-                  <div>follow</div>
-                  <% end %>
-                <% end %>
+              <% if current_user != user %>
+                
+
               <% end %>
             </div>
             <% end %>
