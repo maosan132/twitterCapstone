@@ -162,4 +162,34 @@ li.nav-item a{
       }
     }
   }
+
+  
+.signup-form-wrap {
+  background-color: #fff;
+  color:  rgb(148, 148, 148);
+  border-radius: 10px;
+  width: 90%;
+  height: 90px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  .form-title {
+    padding: 10px 5px 0px 10px;
+  //font-size: 12px;
+  }
+  .form-input {
+    border: 1px solid rgb(216, 216, 216);
+    border-radius: 4px;
+    //font-size: 12px;
+    width: 300px;
+    height: 40px;
+    padding: 10px;
+    margin-left: 10px;
+  }
+  .form-input:focus {
+    outline: none;
+  }
+
+}
 }

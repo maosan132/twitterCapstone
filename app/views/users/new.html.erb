@@ -1,7 +1,7 @@
 <div class="wrapper">
   <div class="left">
     <div class="left-inner">
-<div>
+      <div>
         <i class="fa fa-search"></i>
         Follow your favorite books.
       </div>
@@ -13,47 +13,30 @@
         <i class="fa fa-comment"></i>
         Join the conversation.
       </div>
-    </div>  
+    </div>
   </div>
-  <div class="right right-signup">
-    <!--<div class="form-wrap">
-      <h2>Sign Up</h2>
-      <form class="new_user" id="new_user" enctype="multipart/form-data" action="/signup" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="8MApuPiweRx/X4yMzJj7ic3g/t3f3/JD2OL9+3/wdS31qQkgBWCcV6pihEwQWmKBPi+Y1qAY0GvBPs98LuIIyA==">
-        <label class="form-label" for="user_full_name">Full name</label> <br>
-        <input class="form-input" type="text" name="user[full_name]" id="user_full_name"> <br>
-    
-        <label class="form-label" for="user_username">Username</label> <br>
-        <input class="form-input" type="text" name="user[username]" id="user_username"> <br>
+  <div class="right">
 
-        <label class="form-label" for="user_photo">Photo</label> <br>
-        <input accept="image/jpeg,image/gif,image/png" type="file" name="user[photo]" id="user_photo"> <br>
+    <div class="signup-form-wrap mt-4 py-4 right-center login-wrapper">
 
-        <label class="form-label" for="user_cover_image">Cover image</label> <br>
-        <input accept="image/jpeg,image/gif,image/png" type="file" name="user[cover_image]" id="user_cover_image"> <br>
-    
-        <input type="submit" name="commit" value="Sign up" class="form-btn" data-disable-with="Sign up">
-</form>      <a class="login-btn form-btn" href="/">Login</a>
-    </div>-->
-    <div class="form-wrap">
-    
       <h2><i class="fa fa-book"></i> Sign Up</h2>
       <%= form_for @user, url: signup_path do |f| %>
         <%= f.label :'full name', class: 'form-label' %> <br>
         <%= f.text_field :fullname, class: 'form-input' %> <br>
-    
+
         <%= f.label :'User name', class: 'form-label' %> <br>
         <%= f.text_field :username, class: 'form-input' %> <br>
 
         <%= f.label :photo, class: 'form-label' %> <br>
         <%= f.file_field :photo, accept: 'image/jpeg,image/gif,image/png' %> <br>
 
-        <%= f.label :'Cover image', class: 'form-label' %> <br>
-        <%= f.file_field :coverimage, accept: 'image/jpeg,image/gif,image/png' %> <br>
-    
-        <%= f.submit 'Sign up', class: 'form-btn' %>
+        <%= f.label :'cover image', class: 'form-label' %> <br>
+        <%= f.file_field :coverimage, accept: 'image/jpeg,image/gif,image/png' %> <br><br>
+
+        <%= f.submit 'Sign up', class: 'form-btn w-25' %>
+        <%= link_to 'Login', root_path, class: 'login-btn form-btn w-25' %>
       <% end %>
-      <%= link_to 'Login', root_path, class: 'login-btn form-btn' %>
+      
     </div>
   </div>
 </div>
-
