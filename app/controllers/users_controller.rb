@@ -18,13 +18,13 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @tastes = @user.tastes.all.order(created_at: :desc)
-    list = current_user.followeds.select(:follower_id)
+    list = @user.followers.select(:followed_id)
     @who = User.all.followed(list).includes([:photo_attachment])
   end
 
   def follow
     @user = User.find(params[:id])
-    current_user.current_followeds << @user
+    @user.current_followers << current_user
     redirect_to user_path(@user)
   end
 

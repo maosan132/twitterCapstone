@@ -1,9 +1,10 @@
 
 <aside class="left-bar">
-  <div class="user-image">
+  <!--<div class="user-image">
       <img alt="imagen avatar" class="avatar" >
-  </div>
-  <div class="user-fullname"><%= current_user.fullname %></div>
+  </div>-->
+  <div class="user-fullname"><%= current_user.fullname %><br>(<%= current_user.username %>)</div>
+  
   <div class="user-stats">
     <div>
      <p class="stat-num"><%= current_user.followeds.count %></p>

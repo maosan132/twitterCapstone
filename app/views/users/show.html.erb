@@ -1,4 +1,4 @@
-<h1>User profile page</h1>
+
 <div class="main">
   <%= render 'tastes/left_bar' %>
   <div class="center-block">
@@ -64,10 +64,10 @@
             <%# link_to '+', following_path(@user.id), method: :delete, class: 'follow-user'%>
             <h5><%= "#{@current_user.username}'s page" %></h5>
           <% elsif @current_user.current_followeds.include?(@user) %>
-            <h5><%= button_to "UnFollow #{@user.username}",     
+            <h5><%= button_to "unfollow #{@user.username}",     
                 unfollow_user_path, method: "POST" %></h5>
           <% else %>
-            <h5><%= button_to "Follow #{@user.username}", follow_user_path, 
+            <h5><%= button_to "follow #{@user.username}", follow_user_path, 
                 method: "POST"  %></h5>
           <% end %>
 

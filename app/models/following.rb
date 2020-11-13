@@ -15,4 +15,6 @@ class Following < ApplicationRecord
           errors.add(:followed_id, 'Can\'t follow a user that is already followed')
         end
     end
+
+    
 end

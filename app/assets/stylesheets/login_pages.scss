@@ -29,17 +29,16 @@ body {
   margin: 0;
   padding: 0;
   display: flex;
-  align-content: stretch;
-  flex-direction: flex-end;
+  justify-content: space-between;
+  margin-left: 0;
   .navbar-brand{
-
+    
   }
   .taster {
     height: 100%;
     display: flex;
-    justify-content: right;
     align-items: center;
-    flex-direction: flex-end
+    flex-direction: flex-end;
   }
 }
 
