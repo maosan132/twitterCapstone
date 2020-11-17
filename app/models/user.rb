@@ -18,4 +18,7 @@ class User < ApplicationRecord
     scope :followed, -> (list) { where(id: list) }
 
     scope :not_current_user, -> (current) { where.not(id: current.id) }
+
+    validates :username, uniqueness: true, presence: true, length: { maximum: 15 }
+    validates :fullname, presence: true, length: { maximum: 40 }
 end

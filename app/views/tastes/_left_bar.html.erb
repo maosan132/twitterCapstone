@@ -1,8 +1,12 @@
 
 <aside class="left-bar">
-  <!--<div class="user-image">
-      <img alt="imagen avatar" class="avatar" >
-  </div>-->
+  <div class="user-photo">
+        <% if current_user.photo.attached? %>
+          <image src=<%= (url_for(current_user.photo)) %>>
+    <% else %>
+      no image yet
+    <% end %>
+  </div>
   <div class="user-fullname"><%= current_user.fullname %><br>(<%= current_user.username %>)</div>
   
   <div class="user-stats">

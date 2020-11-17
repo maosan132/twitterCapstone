@@ -39,4 +39,5 @@ end
     flash[:error] = 'You must be logged in to access'
     redirect_to root_path
   end
+
 end
