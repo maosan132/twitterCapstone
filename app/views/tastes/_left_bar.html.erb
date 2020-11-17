@@ -1,17 +1,19 @@
-
 <aside class="left-bar">
-  <div class="user-photo">
-        <% if current_user.photo.attached? %>
-          <image src=<%= (url_for(current_user.photo)) %>>
-    <% else %>
-      no image yet
-    <% end %>
-  </div>
-  <div class="user-fullname"><%= current_user.fullname %><br>(<%= current_user.username %>)</div>
-  
-  <div class="user-stats">
+  <div class="profile-header">
+    <div class="user-photo float-left rounded-lg">
+      <% if current_user.photo.attached? %>
+        <image src=<%= (url_for(current_user.photo))%>>
+      <% else %>
+      no
+      <% end %>
+    </div>
+    <div class="user-fullname"><br><%= current_user.fullname %>
+      (<%= current_user.username %>)
+    </div>
+  </div><br><br>
+  <div class="user-stats ml-2  clearfix">
     <div>
-     <p class="stat-num"><%= current_user.followeds.count %></p>
+      <p class="stat-num"><%= current_user.followeds.count %></p>
       <p>Following</p>
     </div>
     <div>
@@ -23,7 +25,7 @@
     <i class="fa fa-home"></i>
     <div class="menu-item">Home</div>
   <% end %>
-    <%= link_to discover_path do %>
+  <%= link_to discover_path do %>
     <i class="fa fa-hashtag"></i>
     <div class="menu-item">Discover</div>
   <% end %>

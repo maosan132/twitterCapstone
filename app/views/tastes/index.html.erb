@@ -17,10 +17,18 @@
           <li class="single-taste">
 
             <div class="taste-img-wrap">
-              <div class="taste-img">
-
+              <div class="taste-image rounded-lg">
+                  <% if t.user.photo.attached? %>
+                    <%= image_tag t.user.photo %>
+                  <% else %>
+                    NO
+                  <% end %>
               </div>
             </div>
+
+
+
+
 
             <div class="taste-name-text">
               <div class="taste-fullname">

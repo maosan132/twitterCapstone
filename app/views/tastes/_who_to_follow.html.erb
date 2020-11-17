@@ -5,8 +5,12 @@
       <%= @who.each do |user| %>
         <%= link_to user_path(user.id), class: 'user-follow-link' do %>
         <div class="user-follow">
-          <div class="user-follow-img">
-            <img alt="avatar image" class="avatar">
+          <div class="user-follow-image">
+            <% if user.photo.attached? %>
+            <%= image_tag user.photo %>
+          <% else %>
+            xx
+          <% end %>
           </div>
           <div class="user-follow-text">
             <div class="user-follow-fullname"><%= user.fullname %></div>

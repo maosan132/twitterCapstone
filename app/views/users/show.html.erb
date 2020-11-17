@@ -8,6 +8,8 @@
         <div class="profile-cover-image">
         <% if @user.coverimage.attached? %>
           <image src=<%= (url_for(@user.coverimage)) %>>
+          <% else %>
+          no cover yet
         <% end %>
         </div>
         <div class="title-section">
@@ -30,8 +32,12 @@
           <li class="single-taste">
 
             <div class="taste-img-wrap">
-              <div class="taste-img">
-
+              <div class="taste-image">
+                  <% if t.user.photo.attached? %>
+                    <%= image_tag t.user.photo %>
+                  <% else %>
+                    no img
+                  <% end %>
               </div>
             </div>
 
@@ -51,13 +57,14 @@
       </div>
 
       <aside class="user-followings">
-        <div class="profile-img-link">
+        <div class="profile-img-link mt-4">
           <div class="user-image">
-            <%= image_tag  "" %><br>
+            <% if @user.photo.attached? %>
+              <%= image_tag @user.photo%>
+            <% else %> no photo
+            <% end %>
 
           </div>
-
-          <br><br>
         </div>
         <div class="user-fullname"><%= @user.fullname %></div>
         <div class="user-username">@<%= @user.username %></div>
@@ -65,7 +72,7 @@
         <%# link_to "follow/unfollow ", class: 'follow-user' %>
           <% if current_user == @user %>
             <%# link_to '+', following_path(@user.id), method: :delete, class: 'follow-user'%>
-            <h5><%= "#{@current_user.username}'s page" %></h5>
+           
           <% elsif @current_user.current_followeds.include?(@user) %>
             <h5><%= button_to "unfollow #{@user.username}",     
                 unfollow_user_path, method: "POST" %></h5>
@@ -89,14 +96,18 @@
             <p class="stat-text"><%= 'Follower'.pluralize(@user.followers.count) %></p class="stat-text">
           </div>
         </div>
-        <div class="followed-by">
+        <div class="followed-by mt-4">
           <h2>Followed by</h2>
           
           <%= @who.each do |user| %>
             <%= link_to user_path(user.id), class: 'user-follow-link' do %>
             <div class="user-follow">
-              <div class="user-follow-img">
-                <img alt="avatar image" class="avatar">
+              <div class="user-follow-image">
+                <% if user.photo.attached? %>
+                  <%= image_tag user.photo %>
+                <% else %>
+            yy
+                <% end %>
               </div>
               <div class="user-follow-text">
                 <div class="user-follow-fullname"><%= user.fullname %></div>
