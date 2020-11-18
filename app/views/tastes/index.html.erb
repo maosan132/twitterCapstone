@@ -21,20 +21,17 @@
                   <% if t.user.photo.attached? %>
                     <%= image_tag t.user.photo %>
                   <% else %>
-                    NO
+                    <%= t.user.photo.attach(io: File.open('app/assets/images/placeholder-photo.png'),
+                    filename: 'placeholder-photo.png', content_type: 'image/png') %>
                   <% end %>
               </div>
             </div>
-
-
-
-
 
             <div class="taste-name-text">
               <div class="taste-fullname">
                 <%= link_to t.user.fullname, user_path(t.user.id) %>
               </div>
-              <div class="taste-date">
+              <div class="taste-date ml-4">
                 <%= time_ago_in_words(t.created_at) %>
               </div>
               <p><%= t.text %></p>

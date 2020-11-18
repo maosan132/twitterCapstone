@@ -9,7 +9,8 @@
             <% if user.photo.attached? %>
             <%= image_tag user.photo %>
           <% else %>
-            xx
+            <%= user.photo.attach(io: File.open('app/assets/images/placeholder-photo.png'),
+            filename: 'placeholder-photo.png', content_type: 'image/png') %>
           <% end %>
           </div>
           <div class="user-follow-text">

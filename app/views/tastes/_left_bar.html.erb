@@ -4,7 +4,8 @@
       <% if current_user.photo.attached? %>
         <image src=<%= (url_for(current_user.photo))%>>
       <% else %>
-      no
+        <%= current_user.photo.attach(io: File.open('app/assets/images/placeholder-profile.png'),
+        filename: 'placeholder-profile.png', content_type: 'image/png') %>
       <% end %>
     </div>
     <div class="user-fullname"><br><%= current_user.fullname %>

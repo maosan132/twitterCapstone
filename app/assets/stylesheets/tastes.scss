@@ -190,21 +190,37 @@ ul {
 
     .user-followings {
       width: 25%;
-      border-left: 1px solid rgb(216, 216, 216);
+      .profile-follow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-content: space-between;
+      }
       .follow-user {
         display: inline-block;
-        border: 1px solid rgb(77,152,208);
-        padding: 5px 15px;
-        margin: 25px 0 0;
-        border-radius: 20px;
-        font-size: 16px;
-        color: rgb(74, 97, 21);
+        border: 1px solid rgb(216, 216, 216);
+        padding: 10px 15px;
+       
+        border-radius: 30px;
+        font-size: 12px;
         text-decoration: none;
         transition: all 0.5s ease-in-out;
+        a {
+          text-decoration: none;
+          color: rgb(172, 165, 165);
+        }
+        a i:hover {
+          color: white
+        }
       }
       .follow-user:hover {
         background-color: rgb(77,152,208);
-        color: white;
+      }
+      .disable, .disable i{
+        cursor: none;
+      }
+      .disable:hover, .disable:hover i {
+        background-color: none !important;
       }
       .profile-img-link {
         display: flex;
@@ -221,13 +237,6 @@ ul {
           width: 100px;
           height: 100px;
           border-radius: 50%;
-        }
-      .follow{
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        margin: 70px 0 15px;
-        color: red;
         }
       }
       .user-fullname {
@@ -348,7 +357,6 @@ ul {
     border-bottom: 1px solid rgb(216, 216, 216);
     padding: 10px 15px;
     color: rgb(77,152,208);
-
   }
 }
 
