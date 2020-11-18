@@ -1,4 +1,5 @@
 
+<% provide(:profile_button, ('active' if @user == current_user)) %>
 <div class="main">
   <%= render 'tastes/left_bar' %>
   <div class="center-block">
@@ -62,20 +63,24 @@
 
       <aside class="user-followings">
         <div class="profile-follow mr-4">
-          <div class="follow-user mb-4">
 
             <% if current_user == @user %>
+
             <% elsif @current_user.current_followeds.include?(@user) %>
-              <%= link_to unfollow_user_path, title: 'Unfollow this user', method: 'POST' do %>
-                  <i class="fa fa-close"></i>
-              <% end %>
+              <div class="follow-user mb-4">
+                <%= link_to unfollow_user_path, title: 'Unfollow this user', method: 'POST' do %>
+                    <i class="fa fa-close"></i>
+                <% end %>
+              </div>
             <% else %>
-              <%= link_to follow_user_path, title: 'Follow this user', method: 'POST' do %>
-                <i class="fa fa-plus"></i>
-              <% end %>
+              <div class="follow-user mb-4">
+                <%= link_to follow_user_path, title: 'Follow this user', method: 'POST' do %>
+                  <i class="fa fa-plus"></i>
+                <% end %>
+              </div>
             <% end %>
 
-          </div>
+
           <div class="profile-group mx-1">
             <div class="profile-img-link mt-4">
               <div class="user-image">

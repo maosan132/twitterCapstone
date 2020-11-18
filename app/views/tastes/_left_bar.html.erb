@@ -22,15 +22,15 @@
       <p><%= 'Follower'.pluralize(current_user.followers.count) %></p>
     </div>
   </div>
-  <%= link_to tastes_path, class: "left-bar-active" do %>
+  <%= link_to tastes_path, class: yield(:home_button) do %>
     <i class="fa fa-home"></i>
     <div class="menu-item">Home</div>
   <% end %>
-  <%= link_to discover_path do %>
+  <%= link_to discover_path, class: yield(:discover_button) do %>
     <i class="fa fa-hashtag"></i>
     <div class="menu-item">Discover</div>
   <% end %>
-  <%= link_to user_path(current_user.id) do %>
+  <%= link_to user_path(current_user.id), class: yield(:profile_button) do %>
     <i class="fa fa-user"></i>
     <div class="menu-item">Profile</div>
   <% end %>
