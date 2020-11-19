@@ -7,12 +7,7 @@
     <div class="center-wrap">
       <div class="taste-center">
         <div class="profile-cover-image">
-        <% if @user.coverimage.attached? %>
-          <image src=<%= (url_for(@user.coverimage)) %>>
-        <% else %>
-          <%= @user.coverimage.attach(io: File.open('app/assets/images/placeholder-cover.png'),
-          filename: 'placeholder-cover.png', content_type: 'image/png') %>
-        <% end %>
+          <%= has_profile_photo(@user, false) %>
         </div>
         <div class="title-section">
           <div class="tastes-text">Profile</div>
@@ -20,12 +15,8 @@
         <div class="taste-form-wrap">
 
           <h6 class="form-title">TASTE ABOUT SOME BOOK</h6>
+            <%= render 'tastes/new_taste' %>
 
-          <% form_for @taste2, url: tastes_path do |f| %>
-          <% f.text_field :text, class: 'form-input', placeholder: "Compose new taste" %>
-
-          <% f.submit 'Taste it'%>
-          <% end %>
         </div>
         <ul class="taste-list">
           <div class="tastes-count">
@@ -36,12 +27,7 @@
               <li class="single-taste">
                 <div class="taste-img-wrap">
                   <div class="taste-image">
-                      <% if t.user.photo.attached? %>
-                        <%= image_tag t.user.photo %>
-                      <% else %>
-                        <%= t.user.photo.attach(io: File.open('app/assets/images/placeholder-photo.png'),
-                        filename: 'placeholder-photo.png', content_type: 'image/png') %>
-                      <% end %>
+                    <%= has_profile_photo(t.user) %>
                   </div>
                 </div>
                 <div class="taste-name-text">
@@ -113,7 +99,7 @@
             <p class="stat-text"><%= 'Follower'.pluralize(@user.followers.count) %></p class="stat-text">
           </div>
         </div>
-<%= render 'followed_by' %>
+        <%= render 'followed_by' %>
       </aside>
     </div>
  

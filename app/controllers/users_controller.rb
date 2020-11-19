@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @taste2 = Taste.new
+    @taste = Taste.new
     @user = User.find(params[:id])
     @tastes = @user.tastes.all.order(created_at: :desc)
     list = @user.followers.select(:followed_id)

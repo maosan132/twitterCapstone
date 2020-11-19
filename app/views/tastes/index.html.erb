@@ -20,12 +20,7 @@
 
             <div class="taste-img-wrap">
               <div class="taste-image rounded-lg">
-                  <% if t.user.photo.attached? %>
-                    <%= image_tag t.user.photo %>
-                  <% else %>
-                    <%= t.user.photo.attach(io: File.open('app/assets/images/placeholder-photo.png'),
-                    filename: 'placeholder-photo.png', content_type: 'image/png') %>
-                  <% end %>
+                <%= has_profile_photo(t.user) %>
               </div>
             </div>
 

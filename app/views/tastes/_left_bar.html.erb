@@ -1,12 +1,7 @@
 <aside class="left-bar">
   <div class="profile-header">
     <div class="user-photo float-left rounded-lg">
-      <% if current_user.photo.attached? %>
-        <image src=<%= (url_for(current_user.photo))%>>
-      <% else %>
-        <%= current_user.photo.attach(io: File.open('app/assets/images/placeholder-profile.png'),
-        filename: 'placeholder-profile.png', content_type: 'image/png') %>
-      <% end %>
+      <%= has_profile_photo(current_user)%>
     </div>
     <div class="user-fullname"><br><%= current_user.fullname %>
       (<%= current_user.username %>)
