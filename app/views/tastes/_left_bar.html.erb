@@ -12,7 +12,7 @@
       (<%= current_user.username %>)
     </div>
   </div><br><br>
-  <div class="user-stats ml-2  clearfix">
+  <div class="user-stats clearfix border border-dark pt-3 pl-4">
     <div>
       <p class="stat-num"><%= current_user.followeds.count %></p>
       <p>Following</p>
@@ -26,14 +26,14 @@
     <i class="fa fa-home"></i>
     <div class="menu-item">Home</div>
   <% end %>
-  <%= link_to discover_path, class: yield(:discover_button) do %>
-    <i class="fa fa-hashtag"></i>
-    <div class="menu-item">Discover</div>
-  <% end %>
+
   <%= link_to user_path(current_user.id), class: yield(:profile_button) do %>
     <i class="fa fa-user"></i>
     <div class="menu-item">Profile</div>
   <% end %>
 
-
+  <%= link_to edit_user_path(current_user.id), class: yield(:edit_button) do %>
+    <i class="fa fa-pencil-square-o"></i>
+    <div class="menu-item">Edit</div>
+  <% end %>
 </aside>

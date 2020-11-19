@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @taste = Taste.new
+    @taste2 = Taste.new
     @user = User.find(params[:id])
     @tastes = @user.tastes.all.order(created_at: :desc)
     list = @user.followers.select(:followed_id)
@@ -35,6 +35,24 @@ class UsersController < ApplicationController
     redirect_to user_path(@user)
   end
 
+  def edit
+    @user = User.find(params[:id])
+    @tastes = @user.tastes.all.order(created_at: :desc)
+    list = @user.followers.select(:followed_id)
+    @who = User.all.followed(list).includes([:photo_attachment])
+  end
+  
+  def update
+    @user = User.find(params[:id])
+      if @user.update_attributes(params_user)
+        flash[:success] = "User was successfully updated"
+        redirect_to @user
+      else
+        flash[:error] = "Something went wrong"
+        render 'edit'
+      end
+  end
+  
 
   private
 

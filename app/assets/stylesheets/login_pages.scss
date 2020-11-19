@@ -163,7 +163,7 @@ li.nav-item a{
     }
   }
 
-  
+
 .signup-form-wrap {
   background-color: #fff;
   color:  rgb(148, 148, 148);
@@ -192,4 +192,30 @@ li.nav-item a{
   }
 
 }
+}
+
+////EDIT FORM ////
+.edit-form {
+  display: flex;
+  padding-left: 50px;
+  .form-input {
+    border: 1px solid rgb(216, 216, 216);
+    height: 35px;
+    font-size: 16px;
+    font-weight: 100;
+    padding: 3px 7px;
+  }
+  .form-btn {
+    background-color: white;
+    border: 1px solid rgb(77,152,208);
+    color: rgb(77,152,208);
+    font-size: 16px;
+    border-radius: 25px;
+    padding: 7px 15px;
+  }
+  .form-btn:hover {
+    cursor: pointer;
+    background-color: rgb(77,152,208);
+    color: white;
+  }
 }

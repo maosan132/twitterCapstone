@@ -1,0 +1,84 @@
+
+<% provide(:edit_button, ('active' if @user == current_user)) %>
+<div class="main">
+  <%= render 'tastes/left_bar' %>
+  <div class="center-block">
+    <%= render 'shared/header' %>
+    <div class="center-wrap">
+      <div class="taste-center">
+        <div class="profile-cover-image">
+        <% if @user.coverimage.attached? %>
+          <image src=<%= (url_for(@user.coverimage)) %>>
+        <% else %>
+          <%= @user.coverimage.attach(io: File.open('app/assets/images/placeholder-cover.png'),
+          filename: 'placeholder-cover.png', content_type: 'image/png') %>
+        <% end %>
+        </div>
+        <div class="title-section">
+          <div class="tastes-text">Edit User</div>
+        </div>
+        <div class="edit-form signup-form-wrap mt-4 py-4">
+          <%= form_for @user, url: "/users/#{params[:id]}" do |f| %>
+            <%= f.label :'full name', class: 'form-label' %> <br>
+            <%= f.text_field :fullname, class: 'form-input' %> <br>
+
+            <%= f.label :'User name', class: 'form-label' %> <br>
+            <%= f.text_field :username, class: 'form-input' %> <br>
+
+            <%= f.label :photo, class: 'form-label' %> <br>
+            <%= f.file_field :photo, accept: 'image/jpeg,image/gif,image/png' %> <br>
+
+            <%= f.label :'cover image', class: 'form-label' %> <br>
+            <%= f.file_field :coverimage, accept: 'image/jpeg,image/gif,image/png' %> <br><br>
+
+            <%= f.submit 'Update', class: 'form-btn ' %>
+          <% end %>
+        </div>
+      </div>
+
+      <aside class="user-followings">
+        <div class="profile-follow mr-4 pb-4 border-bottom">
+
+            <% if current_user == @user %>
+
+            <% elsif @current_user.current_followeds.include?(@user) %>
+              <div class="follow-user mb-4">
+                <%= link_to unfollow_user_path, title: 'Unfollow this user', method: 'POST' do %>
+                    <i class="fa fa-close"></i>
+                <% end %>
+              </div>
+            <% else %>
+              <div class="follow-user mb-4">
+                <%= link_to follow_user_path, title: 'Follow this user', method: 'POST' do %>
+                  <i class="fa fa-plus"></i>
+                <% end %>
+              </div>
+            <% end %>
+
+
+          <div class="profile-group mx-1">
+            <div class="profile-img-link mt-4">
+              <div class="user-image">
+                <% if @user.photo.attached? %>
+                  <%= image_tag @user.photo%>
+                <% else %> 
+                  <%= @user.photo.attach(io: File.open('app/assets/images/placeholder-profile.png'),
+                  filename: 'placeholder-profile.png', content_type: 'image/png') %>
+                <% end %>
+
+              </div>
+            </div>
+            <div class="user-fullname"><%= @user.fullname %></div>
+            <div class="user-username">@<%= @user.username %></div>
+          </div>
+          
+          <div class="follow-user mb-4 disable"> <a href="#"><i class="fa fa-bars"></i></a>  </div>
+        </div>
+
+        <%= render 'followed_by' %>
+      </aside>
+    </div>
+ 
+  </div>
+
+</div>
