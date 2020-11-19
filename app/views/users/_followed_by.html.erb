@@ -1,16 +1,11 @@
 <div class="followed-by mt-4">
   <h2>Followed by</h2>
   <% unless @who.empty?%>
-    <%= @who.each do |user| %>
+    <% @who.each do |user| %>
       <%= link_to user_path(user.id), class: 'user-follow-link' do %>
       <div class="user-follow">
         <div class="user-follow-image">
-          <% if user.photo.attached? %>
-            <%= image_tag user.photo %>
-          <% else %>
-              <%= user.photo.attach(io: File.open('app/assets/images/placeholder-photo.png'),
-              filename: 'placeholder-photo.png', content_type: 'image/png') %>
-          <% end %>
+          <%= assign_images(@user, false) %>
         </div>
         <div class="user-follow-text">
           <div class="user-follow-fullname"><%= user.fullname %></div>
