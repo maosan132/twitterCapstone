@@ -54,10 +54,23 @@ ul {
     }
   }
 
-  a.active {
+  a {
     text-decoration: none;
-    padding: 15px 35px;
+    padding: 20px 35px;
     display: block;
+    transition: all 0.3s ease-in-out;
+
+    .menu-item {
+      display: inline-block;
+      font-size: 16px;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: rgb(143, 143, 143);
+    }
+  }
+
+  a.active {
+    padding: 15px 35px;
     background-color: rgb(77, 152, 208);
 
     i {
@@ -67,32 +80,7 @@ ul {
     }
 
     .menu-item {
-      display: inline-block;
-      font-size: 16px;
-      text-transform: uppercase;
-      font-weight: 600;
       color: white;
-    }
-  }
-
-  a {
-    text-decoration: none;
-    padding: 20px 35px;
-    display: block;
-    transition: all 0.3s ease-in-out;
-
-    i {
-      font-size: 22px;
-      color: rgb(143, 143, 143);
-      margin-right: 10px;
-    }
-
-    .menu-item {
-      display: inline-block;
-      font-size: 16px;
-      text-transform: uppercase;
-      font-weight: 600;
-      color: rgb(143, 143, 143);
     }
   }
 
@@ -180,43 +168,6 @@ ul {
           background-color: rgb(230, 230, 230);
         }
       }
-
-      .user-follow {
-        padding: 10px;
-        display: flex;
-        transition: all 0.3s ease-in-out;
-
-        .user-follow-image {
-          width: 45px;
-          height: 45px;
-          margin-right: 10px;
-          border-radius: 50%;
-          background-color: #4d98d0;
-
-          img {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-          }
-        }
-
-        .user-follow-text {
-          padding-top: 3px;
-        }
-
-        .user-follow-fullname {
-          text-decoration: none;
-          font-size: 15px;
-          font-weight: 600;
-          color: rgb(41, 41, 41);
-        }
-
-        .user-follow-username {
-          text-decoration: none;
-          color: rgb(151, 151, 151);
-          font-size: 13px;
-        }
-      }
     }
 
     .user-followings {
@@ -252,14 +203,12 @@ ul {
         background-color: rgb(77, 152, 208);
       }
 
-      .disable,
-      .disable i {
+      .disable * {
         cursor: none;
       }
 
-      .disable:hover,
-      .disable:hover i {
-        background-color: none !important;
+      .disable:hover * {
+        background: none !important;
       }
 
       .profile-img-link {
@@ -417,112 +366,5 @@ ul {
     border-bottom: 1px solid rgb(216, 216, 216);
     padding: 10px 15px;
     color: rgb(77, 152, 208);
-  }
-}
-
-.single-taste {
-  list-style: none;
-  padding: 15px 0;
-  display: flex;
-
-  .taste-image {
-    width: 50px;
-    height: 50px;
-    display: inline-block;
-    margin: 0 15px;
-    background-color: rgb(77, 152, 208);
-    border-radius: 10%;
-
-    img {
-      width: 50px;
-      height: 50px;
-      border-radius: 10%;
-    }
-  }
-
-  .taste-name-text {
-    display: inline-block;
-  }
-
-  .taste-fullname {
-    display: inline-block;
-    font-size: 16px;
-    font-weight: 600;
-    margin-right: 5px;
-
-    a {
-      text-decoration: none;
-      color: black;
-    }
-
-    a:hover {
-      text-decoration: none;
-      color: rgb(77, 152, 208);
-    }
-  }
-
-  .taste-date {
-    display: inline-block;
-    float: right;
-    margin-right: 0;
-    display: flex;
-    //flex-direction: column;
-    align-items: flex-end;
-  }
-
-  .taste-username {
-    display: inline-block;
-    color: rgb(77, 152, 208);
-  }
-}
-
-//////find out styles /////////
-.discover-taste-list {
-  padding: 30px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-.discover-taste {
-  width: 45%;
-  border: 1px solid rgb(231, 231, 231);
-  border-radius: 8px;
-  margin: 10px 0;
-  padding: 15px;
-
-  .discover-user-link {
-    text-decoration: none;
-    color: rgb(41, 41, 41);
-  }
-
-  .discover-user-link:hover {
-    .name {
-      color: rgb(77, 152, 208);
-    }
-  }
-
-  .discover-taste-top {
-    display: flex;
-    margin-bottom: 15px;
-    border-bottom: 1px solid rgb(231, 231, 231);
-    padding-bottom: 13px;
-
-    .photo {
-      margin-right: 8px;
-
-      img {
-        width: 45px;
-        height: 45px;
-      }
-    }
-
-    .name {
-      margin-right: 5px;
-    }
-
-    .time {
-      float: right;
-    }
   }
 }
