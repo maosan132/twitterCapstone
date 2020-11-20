@@ -13,7 +13,7 @@ module UsersHelper
       image_tag user.coverimage
     else
       user.coverimage.attach(io: File.open('app/assets/images/placeholder-cover.png'),
-                             filename: 'placeholder-cover.png', content_type: 'image/png')
+                       filename: 'placeholder-cover.png', content_type: 'image/png')
     end
   end
 end
