@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       log_in @user
       redirect_to root_path
     else
-      flash[:error] = "Something went wrong!"
+      flash[:error] = 'Something went wrong!'
       render 'new'
     end
   end
@@ -41,23 +41,21 @@ class UsersController < ApplicationController
     list = @user.followers.select(:followed_id)
     @who = User.all.followed(list).includes([:photo_attachment])
   end
-  
+
   def update
     @user = User.find(params[:id])
-      if @user.update_attributes(params_user)
-        flash[:success] = "User was successfully updated"
-        redirect_to @user
-      else
-        flash[:error] = "Something went wrong"
-        render 'edit'
-      end
+    if @user.update_attributes(params_user)
+      flash[:success] = 'User was successfully updated'
+      redirect_to @user
+    else
+      flash[:error] = 'Something went wrong'
+      render 'edit'
+    end
   end
-  
 
   private
 
   def params_user
     params.require(:user).permit(:username, :fullname, :photo, :coverimage)
   end
-
 end
