@@ -1,4 +1,3 @@
-
 <% provide(:profile_button, ('active' if @user == current_user)) %>
 <div class="main">
   <%= render 'tastes/left_bar' %>
@@ -7,17 +6,12 @@
     <div class="center-wrap">
       <div class="taste-center">
         <div class="profile-cover-image">
-          <%= has_profile_photo(@user, false) %>
+          <%= assign_images(@user, false) %>
         </div>
         <div class="title-section">
           <div class="tastes-text">Profile</div>
         </div>
-        <div class="taste-form-wrap">
-
-          <h6 class="form-title">TASTE ABOUT SOME BOOK</h6>
-            <%= render 'tastes/new_taste' %>
-
-        </div>
+          <%= render 'tastes/new_taste' %>
         <ul class="taste-list">
           <div class="tastes-count">
             <%= @user.fullname.upcase %>'s TASTES
@@ -27,7 +21,7 @@
               <li class="single-taste">
                 <div class="taste-img-wrap">
                   <div class="taste-image">
-                    <%= has_profile_photo(t.user) %>
+                    <%= assign_images(t.user) %>
                   </div>
                 </div>
                 <div class="taste-name-text">

@@ -39,22 +39,21 @@
       <aside class="user-followings">
         <div class="profile-follow mr-4 pb-4 border-bottom">
 
-            <% if current_user == @user %>
+          <% if current_user == @user %>
 
-            <% elsif @current_user.current_followeds.include?(@user) %>
-              <div class="follow-user mb-4">
-                <%= link_to unfollow_user_path, title: 'Unfollow this user', method: 'POST' do %>
-                    <i class="fa fa-close"></i>
-                <% end %>
-              </div>
-            <% else %>
-              <div class="follow-user mb-4">
-                <%= link_to follow_user_path, title: 'Follow this user', method: 'POST' do %>
-                  <i class="fa fa-plus"></i>
-                <% end %>
-              </div>
-            <% end %>
-
+          <% elsif @current_user.current_followeds.include?(@user) %>
+            <div class="follow-user mb-4">
+              <%= link_to unfollow_user_path, title: 'Unfollow this user', method: 'POST' do %>
+                  <i class="fa fa-close"></i>
+              <% end %>
+            </div>
+          <% else %>
+            <div class="follow-user mb-4">
+              <%= link_to follow_user_path, title: 'Follow this user', method: 'POST' do %>
+                <i class="fa fa-plus"></i>
+              <% end %>
+            </div>
+          <% end %>
 
           <div class="profile-group mx-1">
             <div class="profile-img-link mt-4">

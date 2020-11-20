@@ -1,7 +1,7 @@
 <aside class="left-bar">
   <div class="profile-header">
     <div class="user-photo float-left rounded-lg">
-      <%= has_profile_photo(current_user)%>
+      <%= assign_images(current_user)%>
     </div>
     <div class="user-fullname"><br><%= current_user.fullname %>
       (<%= current_user.username %>)
