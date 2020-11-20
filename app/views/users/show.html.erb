@@ -1,0 +1,97 @@
+
+<% provide(:profile_button, ('active' if @user == current_user)) %>
+<div class="main">
+  <%= render 'tastes/left_bar' %>
+  <div class="center-block">
+    <%= render 'shared/header' %>
+    <div class="center-wrap">
+      <div class="taste-center">
+        <div class="profile-cover-image">
+          <%= assign_images(@user, false) %>
+        </div>
+        <div class="title-section">
+          <div class="tastes-text">Profile</div>
+        </div>
+          <%= render 'tastes/new_taste' %>
+        <ul class="taste-list">
+          <div class="tastes-count">
+            <%= @user.fullname.upcase %>'s TASTES
+          </div>
+          <% unless @tastes.empty?%>
+            <%  @tastes.each do |t| %>
+              <li class="single-taste">
+                <div class="taste-img-wrap">
+                  <div class="taste-image">
+                    <%= assign_images(t.user) %>
+                  </div>
+                </div>
+                <div class="taste-name-text">
+
+                  <div class="taste-date ml-4">
+                    <%= time_ago_in_words(t.created_at) %> ago
+                  </div>
+                  <p><%= t.text %></p>
+                </div>
+              </li>
+            <% end %>
+          <% else%>
+          <div class="no-content p-3 mt-2">
+            <p> <%= current_user.fullname %> has not tastes yet</p>
+          </div>
+          <% end %>
+        </ul>
+      </div>
+
+      <aside class="user-followings">
+        <div class="profile-follow mr-4">
+
+            <% if current_user == @user %>
+
+            <% elsif @current_user.current_followeds.include?(@user) %>
+              <div class="follow-user mb-4">
+                <%= link_to unfollow_user_path, title: 'Unfollow this user', method: 'POST' do %>
+                    <i class="fa fa-close"></i>
+                <% end %>
+              </div>
+            <% else %>
+              <div class="follow-user mb-4">
+                <%= link_to follow_user_path, title: 'Follow this user', method: 'POST' do %>
+                  <i class="fa fa-plus"></i>
+                <% end %>
+              </div>
+            <% end %>
+
+
+          <div class="profile-group mx-1">
+            <div class="profile-img-link mt-4">
+              <div class="user-image">
+                <%= assign_images(@user, false) %>
+              </div>
+            </div>
+            <div class="user-fullname"><%= @user.fullname %></div>
+            <div class="user-username">@<%= @user.username %></div>
+          </div>
+          
+          <div class="follow-user mb-4 disable"> <a href="#"><i class="fa fa-bars"></i></a>  </div>
+        </div>
+        <div class="user-profile-stats">
+          <div>
+            <p class="stat-num"><%= @user.tastes.count %></p>
+            <p class="stat-text"><%= 'Taste'.pluralize(@user.tastes.count) %></p>
+          </div>
+          <div class="stat-center">
+            <p class="stat-num"><%= @user.followeds.count %></p>
+            <p class="stat-text">Following</p>
+          </div>
+          <div>
+            <p class="stat-num"><%= @user.followers.count %></p>
+            <p class="stat-text"><%= 'Follower'.pluralize(@user.followers.count) %></p class="stat-text">
+          </div>
+        </div>
+        <%= render 'followed_by' %>
+      </aside>
+    </div>
+ 
+  </div>
+
+</div>

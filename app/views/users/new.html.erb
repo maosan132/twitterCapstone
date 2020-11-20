@@ -1,0 +1,42 @@
+<div class="wrapper">
+  <div class="left">
+    <div class="left-inner">
+      <div>
+        <i class="fa fa-search"></i>
+        Follow your favorite books.
+      </div>
+      <div>
+        <i class="fa fa-heart"></i>
+        Hear what people are reading about.
+      </div>
+      <div>
+        <i class="fa fa-comment"></i>
+        Join the conversation.
+      </div>
+    </div>
+  </div>
+  <div class="right">
+
+    <div class="signup-form-wrap mt-4 py-4 right-center login-wrapper">
+
+      <h2><i class="fa fa-book"></i> Sign Up</h2>
+      <%= form_for @user, url: signup_path do |f| %>
+        <%= f.label :'full name', class: 'form-label' %> <br>
+        <%= f.text_field :fullname, class: 'form-input' %> <br>
+
+        <%= f.label :'User name', class: 'form-label' %> <br>
+        <%= f.text_field :username, class: 'form-input' %> <br>
+
+        <%= f.label :photo, class: 'form-label' %> <br>
+        <%= f.file_field :photo, accept: 'image/jpeg,image/gif,image/png' %> <br>
+
+        <%= f.label :'cover image', class: 'form-label' %> <br>
+        <%= f.file_field :coverimage, accept: 'image/jpeg,image/gif,image/png' %> <br><br>
+
+        <%= f.submit 'Sign up', class: 'form-btn w-25' %>
+        <%= link_to 'Login', root_path, class: 'login-btn form-btn w-25' %>
+      <% end %>
+      
+    </div>
+  </div>
+</div>

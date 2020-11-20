@@ -1,0 +1,9 @@
+<div class="taste-form-wrap">
+
+  <div class="form-title">TASTE ABOUT SOME BOOK</div>
+  <%= form_for @taste, url: tastes_path do |f| %>
+  <%= f.text_field :text, class: 'form-input', placeholder: "Compose new taste" %>
+
+  <% f.submit 'Taste it'%>
+  <% end %>
+</div>

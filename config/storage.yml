@@ -32,3 +32,5 @@ local:
 #   service: Mirror
 #   primary: local
 #   mirrors: [ amazon, google, microsoft ]
+
+# buscar active storage con cloudinary

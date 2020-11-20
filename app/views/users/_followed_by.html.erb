@@ -1,0 +1,22 @@
+<div class="followed-by mt-4">
+  <h2>Followed by</h2>
+  <% unless @who.empty?%>
+    <% @who.each do |user| %>
+      <%= link_to user_path(user.id), class: 'user-follow-link' do %>
+      <div class="user-follow">
+        <div class="user-follow-image">
+          <%= assign_images(user) %>
+        </div>
+        <div class="user-follow-text">
+          <div class="user-follow-fullname"><%= user.fullname %></div>
+          <div class="user-follow-username"><%= user.username %></div>
+        </div>
+      </div>
+      <% end %>
+    <% end %>
+  <% else %>
+  <div class="no-content py-2 mt-2">
+  <p><%= @user.fullname %> has not follows yet.</p>
+  </div>
+  <% end %>
+</div>
