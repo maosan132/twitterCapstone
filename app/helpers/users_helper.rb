@@ -1,5 +1,5 @@
 module UsersHelper
-  def assign_images(user, photo: true)
+  def assign_images(user, photo = true)
     if photo && user.photo.attached?
       image_tag user.photo
     elsif photo

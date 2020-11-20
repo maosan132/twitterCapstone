@@ -1,3 +1,4 @@
+
 <% provide(:profile_button, ('active' if @user == current_user)) %>
 <div class="main">
   <%= render 'tastes/left_bar' %>
@@ -64,13 +65,7 @@
           <div class="profile-group mx-1">
             <div class="profile-img-link mt-4">
               <div class="user-image">
-                <% if @user.photo.attached? %>
-                  <%= image_tag @user.photo%>
-                <% else %> 
-                  <%= @user.photo.attach(io: File.open('app/assets/images/placeholder-profile.png'),
-                  filename: 'placeholder-profile.png', content_type: 'image/png') %>
-                <% end %>
-
+                <%= assign_images(@user, false) %>
               </div>
             </div>
             <div class="user-fullname"><%= @user.fullname %></div>
