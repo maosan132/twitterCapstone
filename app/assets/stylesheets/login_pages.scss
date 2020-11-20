@@ -22,7 +22,7 @@ body {
 }
 
 .navbar {
-  background-color: rgb(77,152,208);
+  background-color: rgb(77, 152, 208);
   color: white;
   border-radius: 0;
   height: 70px;
@@ -31,9 +31,11 @@ body {
   display: flex;
   justify-content: space-between;
   margin-left: 0;
+
   .navbar-brand{
-    
+
   }
+
   .taster {
     height: 100%;
     display: flex;
@@ -43,11 +45,13 @@ body {
 }
 
 .nav {
-  width: 100%; float: left
+  width: 100%;
+  float: left;
 }
 
 .nav > li > a {
   background-color: transparent;
+
   i {
     color: white;
   }
@@ -58,7 +62,7 @@ a.main-logo {
   color: white;
 }
 
-li.nav-item a{
+li.nav-item a {
   color: white;
 }
 
@@ -67,6 +71,7 @@ li.nav-item a{
   height: 100vh;
   display: flex;
   justify-content: space-between;
+
   .left {
     font-size: 30px;
     height: 100%;
@@ -80,18 +85,21 @@ li.nav-item a{
     //<%= asset_path 'logo_background.png' %>;
     background-size: cover;
     color: white;
+
     .left-inner {
       div {
         font-size: 20px;
         font-weight: bolder;
         margin-bottom: 35px;
       }
+
       i {
         margin-right: 15px;
         font-size: 30px;
       }
     }
   }
+
   .right {
     width: 100%;
     display: flex;
@@ -99,12 +107,15 @@ li.nav-item a{
     justify-content: space-between;
     align-items: center;
     padding-bottom: 350px;
+
     .login-wrapper {
       margin-top: 30px;
+
       .form-label {
         color: rgb(98, 98, 98);
         margin-top: 10px;
       }
+
       .form-input {
         border: 1px solid rgb(216, 216, 216);
         height: 35px;
@@ -112,50 +123,59 @@ li.nav-item a{
         font-weight: 100;
         padding: 3px 7px;
       }
+
       .form-btn {
         background-color: white;
-        border: 1px solid rgb(77,152,208);
-        color: rgb(77,152,208);
+        border: 1px solid rgb(77, 152, 208);
+        color: rgb(77, 152, 208);
         font-size: 16px;
         border-radius: 25px;
         padding: 7px 15px;
       }
+
       .form-btn:hover {
         cursor: pointer;
-        background-color: rgb(77,152,208);
+        background-color: rgb(77, 152, 208);
         color: white;
       }
+
       #session_username {
         padding: 5px;
         margin: 10px 10px 0 0;
       }
     }
+
     .right-center {
       width: 350px;
+
       i {
-        color: rgb(77,152,208);
+        color: rgb(77, 152, 208);
         font-size: 50px;
         margin: 0 0 15px 10px;
       }
+
       div {
         font-size: 29px;
         margin-bottom: 60px;
         font-weight: bold;
       }
+
       p {
         margin-bottom: 25px;
         font-weight: bolder;
       }
+
       a {
-        background-color: rgb(77,152,208);
+        background-color: rgb(77, 152, 208);
         text-decoration: none;
-        border: 1px solid rgb(77,152,208);
+        border: 1px solid rgb(77, 152, 208);
         border-radius: 25px;
         padding: 10px 100px;
         color: white;
         font-size: 18px;
         width: 350px;
       }
+
       a:hover {
         color: white;
         background-color: rgb(21, 138, 211);
@@ -163,41 +183,43 @@ li.nav-item a{
     }
   }
 
+  .signup-form-wrap {
+    background-color: #fff;
+    color: rgb(148, 148, 148);
+    border-radius: 10px;
+    width: 90%;
+    height: 90px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 
-.signup-form-wrap {
-  background-color: #fff;
-  color:  rgb(148, 148, 148);
-  border-radius: 10px;
-  width: 90%;
-  height: 90px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  .form-title {
-    padding: 10px 5px 0px 10px;
-  //font-size: 12px;
-  }
-  .form-input {
-    border: 1px solid rgb(216, 216, 216);
-    border-radius: 4px;
-    //font-size: 12px;
-    width: 300px;
-    height: 40px;
-    padding: 10px;
-    margin-left: 10px;
-  }
-  .form-input:focus {
-    outline: none;
-  }
+    .form-title {
+      padding: 10px 5px 0 10px;
+      //font-size: 12px;
+    }
 
-}
+    .form-input {
+      border: 1px solid rgb(216, 216, 216);
+      border-radius: 4px;
+      //font-size: 12px;
+      width: 300px;
+      height: 40px;
+      padding: 10px;
+      margin-left: 10px;
+    }
+
+    .form-input:focus {
+      outline: none;
+    }
+  }
 }
 
 ////EDIT FORM ////
 .edit-form {
   display: flex;
   padding-left: 50px;
+
   .form-input {
     border: 1px solid rgb(216, 216, 216);
     height: 35px;
@@ -205,17 +227,19 @@ li.nav-item a{
     font-weight: 100;
     padding: 3px 7px;
   }
+
   .form-btn {
     background-color: white;
-    border: 1px solid rgb(77,152,208);
-    color: rgb(77,152,208);
+    border: 1px solid rgb(77, 152, 208);
+    color: rgb(77, 152, 208);
     font-size: 16px;
     border-radius: 25px;
     padding: 7px 15px;
   }
+
   .form-btn:hover {
     cursor: pointer;
-    background-color: rgb(77,152,208);
+    background-color: rgb(77, 152, 208);
     color: white;
   }
 }
