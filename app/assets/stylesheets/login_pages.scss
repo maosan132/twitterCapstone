@@ -68,7 +68,7 @@ li.nav-item a {
   display: flex;
   justify-content: space-between;
 
-  .left {  
+  .left {
     font-size: 30px;
     height: 100%;
     width: 100%;
@@ -77,12 +77,12 @@ li.nav-item a {
     justify-content: center;
     align-items: center;
     background-color: rgb(113, 201, 248);
-    background-image: image-url('logo_background.png') no-repeat right top;
+    background-image: url('logo_background.png') no-repeat right top;
     background-size: cover;
     color: white;
 
     .left-inner {
-
+      
       div {
         font-size: 20px;
         font-weight: bolder;
