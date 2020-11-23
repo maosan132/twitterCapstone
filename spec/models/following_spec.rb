@@ -2,12 +2,12 @@ require_relative '../rails_helper'
 
 RSpec.describe Following, type: :model do
   before :each do
-    @user_1 = User.create(fullname: 'User One', username: 'user_1')
-    @user_2 = User.create(fullname: 'User Two', username: 'user_2')
+    @user1 = User.create(fullname: 'Any Name 1', username: 'userx-1')
+    @user2 = User.create(fullname: 'Any Name 2', username: 'userx-2')
   end
 
   it 'is a valid following' do
-    f = Following.new(follower_id: @user_1.id, followed_id: @user_2.id)
+    f = Following.new(follower_id: @user1.id, followed_id: @user2.id)
     expect(f).to be_valid
   end
 
