@@ -22,7 +22,7 @@ Design: [Twitter Redesign](https://www.behance.net/gallery/14286087/Twitter-Rede
 
 ## Demo screenshots
 
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/bookstastes_screenshot.png?raw=true)
+![screenshot](./booktastes_screenshot.png)
 
 ## Built With
 
