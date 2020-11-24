@@ -13,7 +13,7 @@ gem 'puma', '~> 4.1'
 gem 'font-awesome-rails'
 gem 'bootstrap-sass'
 gem 'sass-rails', '>= 6'
-gem 'carrierwave', '~> 2.0'
+gem 'carrierwave', '~> 0.11.2'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker', '~> 4.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
