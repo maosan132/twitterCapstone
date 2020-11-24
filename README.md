@@ -66,7 +66,11 @@ Run RSpec tests
 $ rspec
 ````
 
-## Authors
+👤 **Author**
+
+- Github: [@maosan132](https://github.com/maosan132)
+- Twitter: [@maosan132](https://twitter.com/maosan132)
+- Linkedin: [maurisantos](https://www.linkedin.com/in/mauricsantos)
 
 
 ## 🤝 Contributing
