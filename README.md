@@ -2,7 +2,8 @@
 
 Capstone Project of the Ruby on Rails Curriculum in Microverse.
 
-The project is about creating an MVP of a Twitter like app with the implementation of the main functionalities.
+The project is about creating an MVP of a Twitter like app with the implementation of the main functionalities. In this current project, I wanted to bring the idea of a book opinion app,
+where anybody can share his toughts about any book. Anybody can follow other users. Any user can edit his basic info.
 
 - Users log in only with username (proper authentication was not a requirement)
   - Before a user logs in they can only see the Log in/Sign up page
