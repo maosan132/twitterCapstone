@@ -10,7 +10,8 @@ gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
-gem 'font-awesome-rails', '~> 4.3'
+gem 'font-awesome-rails'
+gem 'bootstrap-sass'
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker', '~> 4.0'
@@ -22,6 +23,7 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+gem 'font-awesome-sass', '~> 5.15.1'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
