@@ -26,7 +26,8 @@ RSpec.feature 'User Features', type: :feature do
     expect(page.current_path).to eq '/tastes'
 
     have_link 'Home', href: tastes_path
-    have_link 'Edit', href: user_path(user1.id)
+    have_link 'Profile', href: user_path(user1.id)
+    have_link 'Edit', href: edit_user_path(user1.id)
     have_link 'Log out', href: logout_path
     have_link 'Taste it', href: tastes_path
     have_link 'User2', href: user_path(user2.id)
