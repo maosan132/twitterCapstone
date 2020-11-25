@@ -4,7 +4,7 @@ RSpec.feature 'User Features', type: :feature do
   scenario 'when accessing the app' do
     user1 = User.create(fullname: 'Any Name 1', username: 'userx-1')
     user2 = User.create(fullname: 'Any Name 2', username: 'userx-2')
-    
+
     visit root_path
     have_link 'Log in', href: login_path
     have_link 'Sign up', href: signup_path
