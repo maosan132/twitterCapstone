@@ -20,7 +20,7 @@
     <div class="signup-form-wrap mt-4 py-4 right-center login-wrapper">
 
       <h2><i class="fa fa-book"></i> Sign Up</h2>
-      <%= form_for @user, url: signup_path do |f| %>
+      <%= form_for @user, html: {multipart: true},url: signup_path do |f| %>
         <%= f.label :'full name', class: 'form-label' %> <br>
         <%= f.text_field :fullname, class: 'form-input' %>
 

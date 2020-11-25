@@ -11,7 +11,7 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
 gem 'bootstrap-sass'
-gem 'carrierwave', '~> 0.11.2'
+
 gem 'font-awesome-rails'
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
@@ -28,13 +28,11 @@ gem 'font-awesome-sass', '~> 5.15.1'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
+gem "google-cloud-storage"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
-gem 'fog-google'
-gem 'google-api-client', '> 0.8.5', '< 0.9'
-gem 'mime-types'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

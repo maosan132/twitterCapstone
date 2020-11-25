@@ -15,11 +15,21 @@ local:
 #   bucket: your_own_bucket
 
 # Remember not to checkin your GCS keyfile to a repository
+google_dev:
+  service: GCS
+  project: "My First Project"
+  credentials: <%= Rails.application.credentials.google.to_json %>
+  bucket: booktastes2
+
+google:
+  service: GCS
+  project: "My First Project"
+  credentials: <%= Rails.application.credentials.google  %>
+  bucket: booktastes2
+
 # google:
-#   service: GCS
-#   project: your_project
-#   credentials: <%= Rails.root.join("path/to/gcs.keyfile") %>
-#   bucket: your_own_bucket
+# access_key_id: GOOGAWK5RUA75WP2BM6RRWEU
+# secret_access_key: JJWnT/uat25cApXvo1v1kJAmLvGO4rLQuP83KY88
 
 # Use rails credentials:edit to set the Azure Storage secret (as azure_storage:storage_access_key)
 # microsoft:

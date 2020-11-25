@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :url_redirection, only: %i[edit update destroy]
+
   def new
     @user = User.new
   end
@@ -10,6 +12,13 @@ class UsersController < ApplicationController
       log_in @user
       redirect_to root_path
     else
+      put 'test'
+      put 'test'
+      put 'test'
+      put @user.errors.messages
+      put 'test'
+      put 'test'
+      put 'test'      
       flash[:error] = 'Something went wrong!'
       render 'new'
     end
@@ -58,4 +67,9 @@ class UsersController < ApplicationController
   def params_user
     params.require(:user).permit(:username, :fullname, :photo, :coverimage)
   end
+
+  def url_redirection
+    @user = User.find(params[:id])
+    redirect_to(tastes_url) unless current_user == @user
+  end  
 end
