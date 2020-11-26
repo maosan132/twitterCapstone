@@ -16,10 +16,11 @@ where anybody can share his toughts about any book. Anybody can follow other use
 
 - The app is an MVP of the full product - with the full graphical design, but only basic features that can be extended in the future.
 
-
-The Live Version - 
-
 Design: [Twitter Redesign](https://www.behance.net/gallery/14286087/Twitter-Redesign-of-UI-details), by [Gregoire Vella](https://www.behance.net/gregoirevella)
+
+## Live Demo
+
+https://young-coast-98599.herokuapp.com/
 
 ## Demo screenshots
 
