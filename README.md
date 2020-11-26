@@ -36,7 +36,7 @@ https://young-coast-98599.herokuapp.com/
  - gem 'bootstrap-sass'
  - gem 'font-awesome-rails'
  - gem 'rspec'
-- 
+ - gem 'google-cloud-storage'
 
 ## Usage
 
