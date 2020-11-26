@@ -1,3 +1,13 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+// CSS styling based on https://github.com/ermin-cahtarevic/twitter-capstone
+
+.follow {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 70px 0 15px;
+  color: red;
+  text-decoration: underline;
+}

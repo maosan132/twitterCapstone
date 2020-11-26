@@ -2,55 +2,62 @@
 
 Capstone Project of the Ruby on Rails Curriculum in Microverse.
 
-The project consisted of creating an MVP of the app. With the implementation of the main functionalities.
+The project is about creating an MVP of a Twitter like app with the implementation of the main functionalities. In this current project, I wanted to bring the idea of a book opinion app,
+where anybody can share his toughts about any book. Anybody can follow other users. Any user can edit his basic info.
 
 - Users log in only with username (proper authentication was not a requirement)
   - Before a user logs in they can only see the Log in/Sign up page
   - When they log in they have full access to the app
-- Users can create opinions/tweets
-- Users can follow other users
+- Users can create opinions about books which I have called tastes (like tweets)
+- Users can follow other users and see what users are following them
 - Users can add a profile photo and a profile cover image
-  - They can upload the images while signing up 
-  - Or, later on through the settings page
-- The discover page shows the most recent opinions/tweets from users that are not followed by the logged in user
+  - They can upload those images when signing up 
+- User can update all its data in the edit feature
 
 - The app is an MVP of the full product - with the full graphical design, but only basic features that can be extended in the future.
 
 
-The Live Version - [Twitter Redesign](https://twitter-redesign.herokuapp.com/)
+The Live Version - 
 
 Design: [Twitter Redesign](https://www.behance.net/gallery/14286087/Twitter-Redesign-of-UI-details), by [Gregoire Vella](https://www.behance.net/gregoirevella)
 
-## Home page
-![Homepage](/screenshots/twitter-homepage.png?raw=true "Homepage")
+## Demo screenshots
 
-## Profile page
-![Profile page](/screenshots/twitter-profile.png?raw=true "Profile page")
+![screenshot](./booktastes_screenshot.png)
 
 ## Built With
 
-- Ruby (version 2.6.4)
-- Ruby on Rails (version 5.2.4)
-
+- Ruby (version 2.6.5p114)
+- Ruby on Rails (version 6.0.3.4)
 - Gems
  - gem 'pg'
+ - gem 'hirb'
  - gem 'bootstrap-sass'
  - gem 'font-awesome-rails'
  - gem 'rspec'
- - gem 'capybara'
- - gem 'carrierwave'
- - gem 'faker'
-
+- 
 
 ## Usage
 
-Clone the repository to your machine and cd into the directory
+Download the repository to your local disk and go to the root directory of app
 
 ````
-$ git clone git@github.com:ermin-cahtarevic/twitter-capstone.git
-$ cd twitter-capstone
+$ git clone https://github.com/maosan132/twitterCapstone.git
+$ cd twitterCapstone
 ````
-Use the following command to start the rails server then visit: http://localhost:3000 to use the app
+From the command line, execute next commands:
+
+````
+$ bundle install
+$ rails db:migrate
+````
+
+Should any error messages concerning to bootstrap, try this from command line:
+````
+$ yarn add bootstrap
+````
+
+From command line hit this line to start the rails server then visit: http://localhost:3000 to fire the app
 ````
 $ rails s
 ````
@@ -60,19 +67,17 @@ Run RSpec tests
 $ rspec
 ````
 
-## Authors
+👤 **Author**
 
-👤 **Ermin Cahtarevic**
+- Github: [@maosan132](https://github.com/maosan132)
+- Twitter: [@maosan132](https://twitter.com/maosan132)
+- Linkedin: [maurisantos](https://www.linkedin.com/in/mauricsantos)
 
-- Github: [@ermin-cahtarevic](https://github.com/ermin-cahtarevic)
-- Linkedin: [ermincahtarevic](https://www.linkedin.com/in/ermincahtarevic/)
-- Twitter: [@ErminCahtarevic](https://twitter.com/ErminCahtarevic)
 
 ## 🤝 Contributing
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/ermin-cahtarevic/twitter-capstone/issues).
 
 ## Show your support
 
@@ -81,5 +86,3 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - [Microverse](https://www.microverse.org/)
-- [UI Avatars](https://eu.ui-avatars.com/)
-- [Gregoire Vella](https://www.behance.net/gregoirevella)

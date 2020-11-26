@@ -1,6 +1,7 @@
 // Place all the styles related to the login_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+// CSS styling based on https://github.com/ermin-cahtarevic/twitter-capstone
 
 @import "font-awesome";
 
@@ -15,56 +16,49 @@ body {
   margin-bottom: 0;
 }
 
-.homepage {
+.main {
   display: flex;
   min-height: 100vh;
 }
 
 .navbar {
-  background-color: rgba(29,161,242,1.00);
+  background-color: rgb(77, 152, 208);
   color: white;
   border-radius: 0;
-  height: 80px;
+  height: 70px;
   margin: 0;
-  .navbar-inner {
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 0;
+
+  .taster {
     height: 100%;
-    .twitter {
-      height: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+    display: flex;
+    align-items: center;
+    //flex-direction: flex-end;
   }
 }
 
-.nav > li > a.dropdown-toggle {
-  padding: 30px 15px 17px;
+.nav {
+  width: 100%;
+  float: left;
 }
 
-.nav > li > a.dropdown-toggle:hover,
-.nav > li > a.dropdown-toggle:focus {
+.nav > li > a {
   background-color: transparent;
+
   i {
     color: white;
   }
 }
 
-.nav .open > a.dropdown-toggle {
-  background-color: transparent;
-  i {
-    color: white;
-  }
-}
-
-.dropdown-toggle {
-  i {
-    font-size: 30px;
-    color: rgb(216, 216, 216);
-  }
-}
-
-.home-logo {
+a.main-logo {
   font-size: 40px;
+  color: white;
+}
+
+li.nav-item a {
   color: white;
 }
 
@@ -73,6 +67,7 @@ body {
   height: 100vh;
   display: flex;
   justify-content: space-between;
+
   .left {
     font-size: 30px;
     height: 100%;
@@ -82,22 +77,34 @@ body {
     justify-content: center;
     align-items: center;
     background-color: rgb(113, 201, 248);
-    background-image: image-url('logo_background.png') no-repeat right top;
+    //background-image: image-url('logo_background.png') no-repeat right top;
     //<%= asset_path 'logo_background.png' %>;
     background-size: cover;
     color: white;
+
     .left-inner {
       div {
         font-size: 20px;
         font-weight: bolder;
         margin-bottom: 35px;
       }
+
       i {
         margin-right: 15px;
         font-size: 30px;
       }
     }
   }
+
+  .form-input {
+    border: 1px solid rgb(216, 216, 216);
+    border-radius: 4px;
+    width: 300px;
+    height: 40px;
+    padding: 10px;
+    margin-left: 10px;
+  }
+
   .right {
     width: 100%;
     display: flex;
@@ -105,12 +112,15 @@ body {
     justify-content: space-between;
     align-items: center;
     padding-bottom: 350px;
-    .login-form-wrap {
+
+    .login-wrapper {
       margin-top: 30px;
+
       .form-label {
         color: rgb(98, 98, 98);
         margin-top: 10px;
       }
+
       .form-input {
         border: 1px solid rgb(216, 216, 216);
         height: 35px;
@@ -118,54 +128,89 @@ body {
         font-weight: 100;
         padding: 3px 7px;
       }
+
       .form-btn {
         background-color: white;
-        border: 1px solid rgba(29,161,242,1.00);
-        color: rgba(29,161,242,1.00);
+        border: 1px solid rgb(77, 152, 208);
+        color: rgb(77, 152, 208);
         font-size: 16px;
         border-radius: 25px;
         padding: 7px 15px;
       }
+
       .form-btn:hover {
         cursor: pointer;
-        background-color: rgb(29,161,242);
+        background-color: rgb(77, 152, 208);
         color: white;
       }
+
       #session_username {
         padding: 5px;
         margin: 10px 10px 0 0;
       }
     }
+
     .right-center {
       width: 350px;
+      margin-top: 60px;
+
       i {
-        color: rgba(29,161,242,1.00);
+        color: rgb(77, 152, 208);
         font-size: 50px;
         margin: 0 0 15px 10px;
       }
+
       div {
         font-size: 29px;
-        margin-bottom: 60px;
         font-weight: bold;
       }
+
       p {
         margin-bottom: 25px;
         font-weight: bolder;
       }
+
       a {
-        background-color: rgb(29,161,242);
+        background-color: rgb(77, 152, 208);
         text-decoration: none;
-        border: 1px solid rgba(29,161,242,1.00);
+        border: 1px solid rgb(77, 152, 208);
         border-radius: 25px;
         padding: 10px 100px;
         color: white;
         font-size: 18px;
         width: 350px;
       }
+
       a:hover {
         color: white;
         background-color: rgb(21, 138, 211);
       }
     }
   }
+
+  .signup-form-wrap {
+    background-color: #fff;
+    color: rgb(148, 148, 148);
+    border-radius: 10px;
+    width: 90%;
+    height: 90px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    .form-title {
+      padding: 10px 5px 0 10px;
+    }
+
+    .form-input:focus {
+      outline: none;
+    }
+  }
+}
+
+////EDIT FORM ////
+.edit-form {
+  display: flex;
+  padding-left: 50px;
 }

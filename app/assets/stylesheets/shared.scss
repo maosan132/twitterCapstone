@@ -1,0 +1,103 @@
+
+.main-logo {
+  font-size: 40px;
+  color: red;
+}
+
+.center-block {
+  .center-wrap {
+    .single-taste {
+      list-style: none;
+      padding: 15px 0;
+      display: flex;
+
+      .taste-image {
+        width: 50px;
+        height: 50px;
+        display: inline-block;
+        margin: 0 15px;
+        background-color: rgb(77, 152, 208);
+        border-radius: 10%;
+
+        img {
+          width: 50px;
+          height: 50px;
+          border-radius: 10%;
+        }
+      }
+
+      .taste-name-text {
+        display: inline-block;
+      }
+
+      .taste-fullname {
+        display: inline-block;
+        font-size: 16px;
+        font-weight: 600;
+        margin-right: 5px;
+
+        a {
+          text-decoration: none;
+          color: black;
+        }
+
+        a:hover {
+          text-decoration: none;
+          color: rgb(77, 152, 208);
+        }
+      }
+
+      .taste-date {
+        float: right;
+        margin-right: 0;
+        display: flex;
+        //flex-direction: column;
+        align-items: flex-end;
+      }
+
+      .taste-username {
+        display: inline-block;
+        color: rgb(77, 152, 208);
+      }
+    }
+
+    aside {
+      .user-follow {
+        padding: 10px;
+        display: flex;
+        transition: all 0.3s ease-in-out;
+
+        .user-follow-image {
+          width: 45px;
+          height: 45px;
+          margin-right: 10px;
+          border-radius: 50%;
+          background-color: #4d98d0;
+
+          img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+          }
+        }
+
+        .user-follow-text {
+          padding-top: 3px;
+        }
+
+        .user-follow-fullname {
+          text-decoration: none;
+          font-size: 15px;
+          font-weight: 600;
+          color: rgb(41, 41, 41);
+        }
+
+        .user-follow-username {
+          text-decoration: none;
+          color: rgb(151, 151, 151);
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}

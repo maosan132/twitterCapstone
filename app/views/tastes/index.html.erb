@@ -1,0 +1,47 @@
+<% provide(:home_button, ('active')) %>
+
+<div class="main">
+  <%= render 'left_bar' %>
+  <div class="center-block">
+    <%= render 'shared/header' %>
+    <div class="center-wrap">
+      <div class="taste-center">
+        <div class="title-section">
+          <div class="tastes-text">Tastes</div>
+        </div>
+        <%= render 'new_taste' %>
+
+        <ul class="taste-list">
+          <div class="tastes-count">
+            <%= current_user.tastes.count %> NEW TASTES
+          </div>
+          <%  @tastes.each do |t| %>
+          <li class="single-taste">
+
+            <div class="taste-img-wrap">
+              <div class="taste-image rounded-lg">
+                <%= assign_images(t.user) %>
+              </div>
+            </div>
+
+            <div class="taste-name-text">
+              <div class="taste-fullname">
+                <%= link_to t.user.fullname, user_path(t.user.id) %>
+              </div>
+              <div class="taste-date ml-4">
+                <%= time_ago_in_words(t.created_at) %>
+              </div>
+              <p><%= t.text %></p>
+            </div>
+
+          </li>
+          <% end %>
+        </ul>
+      </div>
+
+      <%= render 'who_to_follow' %>
+    </div>
+
+  </div>
+
+</div>
