@@ -6,19 +6,26 @@ class UsersController < ApplicationController
   end
 
   def create
+    puts 'test'
+    puts 'test'
+    puts 'test'
+    puts params.inspect
+    puts 'test'
+    puts 'test'
+    puts 'test'      
     @user = User.new(params_user)
     if @user.save
       flash[:success] = 'Successfully signed up!'
       log_in @user
       redirect_to root_path
     else
-      put 'test'
-      put 'test'
-      put 'test'
-      put @user.errors.messages
-      put 'test'
-      put 'test'
-      put 'test'      
+      puts 'test'
+      puts 'test'
+      puts 'test'
+      puts @user.errors.messages
+      puts 'test'
+      puts 'test'
+      puts 'test'      
       flash[:error] = 'Something went wrong!'
       render 'new'
     end

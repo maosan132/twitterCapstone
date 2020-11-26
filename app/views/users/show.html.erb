@@ -6,7 +6,7 @@
     <div class="center-wrap">
       <div class="taste-center">
         <div class="profile-cover-image">
-          <%# assign_coverimage(@user) %>
+          <%= assign_coverimage(@user)%>
         </div>
         <div class="title-section">
           <div class="tastes-text">Profile</div>
@@ -21,7 +21,7 @@
               <li class="single-taste">
                 <div class="taste-img-wrap">
                   <div class="taste-image">
-                    <%# assign_images(t.user) %>
+                    <%= assign_images(t.user) %>
                   </div>
                 </div>
                 <div class="taste-name-text">
@@ -63,7 +63,7 @@
           <div class="profile-group mx-1">
             <div class="profile-img-link mt-4">
               <div class="user-image">
-                <%= assign_images(current_user)%>
+                <%= assign_images(@user)%>
               </div>
             </div>
             <div class="user-fullname"><%= @user.fullname %></div>

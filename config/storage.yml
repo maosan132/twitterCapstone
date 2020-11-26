@@ -19,13 +19,13 @@ google_dev:
   service: GCS
   project: "My First Project"
   credentials: <%= Rails.application.credentials.google.to_json %>
-  bucket: booktastes2
+  bucket: booktastes
 
 google:
   service: GCS
   project: "My First Project"
-  credentials: <%= Rails.application.credentials.google  %>
-  bucket: booktastes2
+  credentials: <%= Rails.application.credentials.google.to_json %>
+  bucket: booktastes
 
 # google:
 # access_key_id: GOOGAWK5RUA75WP2BM6RRWEU
