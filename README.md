@@ -20,7 +20,11 @@ Design: [Twitter Redesign](https://www.behance.net/gallery/14286087/Twitter-Rede
 
 ## Live Demo
 
-https://young-coast-98599.herokuapp.com/
+https://booktastes.herokuapp.com/
+
+## Video presentation
+
+https://www.loom.com/share/df4d09f7878145acad9dd147f28298c4
 
 ## Demo screenshots
 
