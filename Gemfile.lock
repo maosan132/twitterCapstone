@@ -90,8 +90,6 @@ GEM
       multipart-post (>= 1.2, < 3)
       ruby2_keywords
     ffi (1.13.1)
-    font-awesome-rails (4.7.0.5)
-      railties (>= 3.2, < 6.1)
     font-awesome-sass (5.15.1)
       sassc (>= 1.11)
     globalid (0.4.2)
@@ -287,7 +285,6 @@ DEPENDENCIES
   bootstrap-sass
   byebug
   capybara (>= 2.15)
-  font-awesome-rails
   font-awesome-sass (~> 5.15.1)
   google-cloud-storage
   hirb
