@@ -1,0 +1,370 @@
+// Place all the styles related to the tastes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+// CSS styling based on https://github.com/ermin-cahtarevic/twitter-capstone
+
+ul {
+  padding-left: 0 !important;
+}
+
+.left-bar {
+  width: 300px;
+  background-color: rgb(30, 50, 69);
+  color: white;
+
+  .user-photo {
+    margin: 5px;
+    background-color: rgb(77, 152, 208);
+    width: 60px;
+    height: 60px;
+
+    img {
+      width: 60px;
+      height: 60px;
+      border-radius: 10%;
+    }
+
+    .no-photo {
+      border-radius: 10%;
+      width: 60px;
+      height: 60px;
+      background-color: rgb(77, 152, 208);
+    }
+  }
+
+  .user-fullname {
+    text-align: center;
+    font-size: 14px;
+    color: rgb(216, 216, 216);
+  }
+
+  .user-stats {
+    display: flex;
+    justify-content: space-around;
+
+    .stat-num {
+      font-size: 20px;
+      margin-bottom: 0;
+      color: white;
+    }
+
+    div {
+      text-align: center;
+      color: rgb(143, 143, 143);
+    }
+  }
+
+  a {
+    text-decoration: none;
+    padding: 20px 35px;
+    display: block;
+    transition: all 0.3s ease-in-out;
+
+    .menu-item {
+      display: inline-block;
+      font-size: 16px;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: rgb(143, 143, 143);
+    }
+  }
+
+  a.active {
+    padding: 15px 35px;
+    background-color: rgb(77, 152, 208);
+
+    i {
+      font-size: 22px;
+      color: white;
+      margin-right: 10px;
+    }
+
+    .menu-item {
+      color: white;
+    }
+  }
+
+  a:hover {
+    background-color: rgb(77, 152, 208);
+
+    i,
+    .menu-item {
+      color: white;
+    }
+  }
+}
+
+.center-block {
+  width: 100%;
+
+  .center-wrap {
+    display: flex;
+    min-height: calc(100vh - 80px);
+
+    .taste-center {
+      background-color: rgb(243, 245, 247);
+      width: 75%;
+
+      .cover-image {
+        width: 100%;
+        height: 310px;
+        background-color: rgb(216, 216, 216);
+      }
+
+      .profile-cover-image {
+        width: 100%;
+        max-height: 330px;
+
+        img {
+          width: 100%;
+          max-height: 330px;
+          object-fit: cover;
+        }
+      }
+
+      .title-section {
+        height: 73px;
+        border-bottom: 1px solid rgb(216, 216, 216);
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+
+        div {
+          text-transform: uppercase;
+          font-size: 15px;
+          font-weight: 600;
+          color: rgb(143, 143, 143);
+          padding: 24px 20px;
+          height: 100%;
+        }
+
+        .tastes-text {
+          border-bottom: 4px solid rgb(77, 152, 208);
+          color: rgb(98, 98, 98);
+        }
+      }
+    }
+
+    /////// side bars styles //////
+
+    aside {
+      width: 25%;
+      border-left: 1px solid rgb(216, 216, 216);
+
+      .who-to-follow {
+        font-size: 15px;
+        text-transform: uppercase;
+        font-weight: 600;
+        padding: 25px 20px 26px;
+        margin: 0;
+        color: rgb(143, 143, 143);
+        border-bottom: 1px solid rgb(216, 216, 216);
+      }
+
+      .user-follow-link:hover {
+        text-decoration: none;
+
+        .user-follow {
+          background-color: rgb(230, 230, 230);
+        }
+      }
+    }
+
+    .user-followings {
+      width: 25%;
+
+      .profile-follow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-content: space-between;
+      }
+
+      .follow-user {
+        display: inline-block;
+        border: 1px solid rgb(216, 216, 216);
+        padding: 10px 15px;
+        border-radius: 30px;
+        font-size: 12px;
+        text-decoration: none;
+        transition: all 0.5s ease-in-out;
+
+        a {
+          text-decoration: none;
+          color: rgb(172, 165, 165);
+        }
+
+        a i:hover {
+          color: white;
+        }
+      }
+
+      .follow-user:hover {
+        background-color: rgb(77, 152, 208);
+      }
+
+      .disable * {
+        cursor: none;
+      }
+
+      .disable:hover * {
+        background: none !important;
+      }
+
+      .profile-img-link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .user-image {
+        width: 100px;
+        height: 100px;
+        background-color: rgb(77, 152, 208);
+        border-radius: 50%;
+
+        img {
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+        }
+      }
+
+      .user-fullname {
+        text-align: center;
+        margin: 10px 0 0;
+        font-size: 18px;
+        color: black;
+      }
+
+      .user-username {
+        text-align: center;
+        font-size: 14px;
+        color: rgb(143, 143, 143);
+      }
+
+      .user-profile-stats {
+        display: flex;
+        text-align: center;
+        border-top: 1px solid rgb(216, 216, 216);
+        border-bottom: 1px solid rgb(216, 216, 216);
+        margin-top: 20px;
+
+        div {
+          padding: 10px;
+          width: 33%;
+        }
+
+        .stat-center {
+          border-left: 1px solid rgb(216, 216, 216);
+          border-right: 1px solid rgb(216, 216, 216);
+        }
+
+        .stat-num {
+          font-size: 20px;
+          font-weight: 600;
+          margin: 0;
+        }
+
+        .stat-text {
+          font-size: 15px;
+          color: rgb(143, 143, 143);
+        }
+      }
+
+      .followed-by {
+        padding: 0 20px;
+
+        .followed-by-wrap {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 15px 0;
+        }
+
+        .followed-by-wrap > div {
+          display: flex;
+          align-items: center;
+        }
+
+        h2 {
+          font-size: 15px;
+          text-transform: uppercase;
+          color: rgb(143, 143, 143);
+        }
+
+        .followed-by-img {
+          width: 40px;
+          height: 40px;
+          margin-right: 5px;
+
+          img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+          }
+        }
+
+        .followed-by-list {
+          margin: 0;
+          padding: 0;
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          font-size: 30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+  }
+}
+
+.taste-form-wrap {
+  background-color: #fff;
+  color: rgb(148, 148, 148);
+  border: 1px solid rgb(216, 216, 216);
+  border-radius: 10px;
+  width: 90%;
+  height: 90px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  .form-title {
+    padding: 10px 5px 0 10px;
+    //font-size: 12px;
+  }
+
+  .form-input {
+    border: 1px solid rgb(216, 216, 216);
+    border-radius: 4px;
+    //font-size: 12px;
+    width: 490px;
+    height: 40px;
+    padding: 10px;
+    margin-left: 10px;
+  }
+
+  .form-input:focus {
+    outline: none;
+  }
+}
+
+.taste-list {
+  //padding: 35px 50px;
+  border: 1px solid rgb(216, 216, 216);
+  border-radius: 10px;
+  background-color: #fff;
+  margin: 15px auto;
+  width: 90%;
+
+  .tastes-count {
+    border-bottom: 1px solid rgb(216, 216, 216);
+    padding: 10px 15px;
+    color: rgb(77, 152, 208);
+  }
+}

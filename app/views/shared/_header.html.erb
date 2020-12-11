@@ -1,0 +1,14 @@
+<header>
+  <nav class="navbar navbar-expand-lg">
+    <%= link_to :tastes, class: 'main-logo navbar-brand px-4' do %>
+    <i class='fa fa-book logo'> </i>
+    <% end %>
+    <div class='taster'>
+      <ul class="navbar-nav mr-auto mt-lg-0 px-4">
+        <li class='nav-item'><i class='fa fa-user logo'> </i><%= link_to ' Profile', user_path(current_user.id) %></li>
+        <li class='ml-2'></li>
+        <li class='nav-item'><i class='fa fa-user-times logo'> </i><%= link_to ' Log out', logout_path, method: :delete %></li>
+      </ul>
+    </div>
+  </nav>
+</header>

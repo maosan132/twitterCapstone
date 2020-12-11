@@ -1,0 +1,21 @@
+<aside class="profile">
+  <p class="who-to-follow">Who to follow</p>
+  <% if @user != current_user %>
+
+      <% @who.each do |user| %>
+        <%= link_to user_path(user.id), class: 'user-follow-link' do %>
+        <div class="user-follow">
+          <div class="user-follow-image">
+            <%= assign_images(user) %>
+          </div>
+          <div class="user-follow-text">
+            <div class="user-follow-fullname"><%= user.fullname %></div>
+            <div class="user-follow-username"><%= user.username %></div>
+          </div>
+        </div>
+        <% end %>
+      <% end %>
+
+  <% end %>
+
+</aside>
